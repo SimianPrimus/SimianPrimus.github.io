@@ -1,0 +1,63 @@
+*    {
+    padding: 0;
+    margin: 0;
+
+}
+body {
+    font-family: 'Montserrat';
+    font-size: 2em;
+    background-color: #FAA968;
+    opacity: .9;
+    
+}
+
+header {
+    background: #028393;
+    height: 1.5em;
+    padding: 0%;
+    opacity: .9;
+}
+
+ul   {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: .25em;
+        
+}
+
+li {
+    display: inline;
+    padding-inline-start: 1em;
+}
+
+button {
+
+}
+
+.nav {
+    background-color: #028393;
+    padding: 0%;
+
+}
+
+.myName {
+    float: right;
+    padding-top: 6em;
+    padding-right: 1em;
+
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+h2 {
+    
+}
+
+
+
+
