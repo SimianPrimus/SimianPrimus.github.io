@@ -1,0 +1,18 @@
+{
+  "name": "simianprimus.github.io",
+  "version": "1.0.0",
+  "description": "personal portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "SimianPrimus.github.io"
+  },
+  "author": "Sarah McGregor",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}
