@@ -4,7 +4,8 @@
   "description": "personal portfolio site",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "build:css": "tailwindcss -i ./input.css -o ./dist/output.css --watch"
   },
   "repository": {
     "type": "git",

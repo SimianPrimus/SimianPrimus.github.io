@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+
+body {
+  @apply bg-custom-image bg-cover;
+  animation: slidein 100s infinite alternate forwards;
+}
+
+.center {
+  @apply flex items-center justify-center absolute m-auto top-0 right-0 bottom-0 left-0 rounded-md;
+  background: rgba(75, 75, 250, 0.3);
+}
+
+.center h1 {
+  @apply text-center text-white uppercase;
+  font-family: 'Source Code Pro', monospace;
+}
