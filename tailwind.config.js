@@ -5,12 +5,27 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: {
+          // Define primary colors here
+        },
+        secondary: {
+          // Define secondary colors here
+        },
+        shades: {
+          "cultured-50": "#f5f5f580", // Cultured color with the hex value for the color
+        },
+        gradients: {
+          // Define gradient colors here
+        },
+      },
       padding: {
         "main-xl": "155px",
         "main-lg": "100px",
         "main-md": "80px",
         "main-sm": "50px",
-        "24": "24px",
+         24: "24px",
+         48: "48px",
       },
       animation: {
         slidein: "slidein 100s infinite alternate forwards",
@@ -23,7 +38,7 @@ module.exports = {
       },
       backgroundImage: {
         "custom-image":
-          "url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg')",
+          "url('https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
       },
       fontFamily: {
         "source-code-pro": ["'Source Code Pro'", "monospace"],
