@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sarah McGregor — full-stack engineer, privacy & compliance specialist. Retro arcade portfolio." />
+  <meta name="description" content="Sarah McGregor's personal portfolio. Full-stack engineer, currently working on privacy and compliance. Retro arcade theme." />
   <title>SARAH MCGREGOR // FULL-STACK ENGINEER</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -122,8 +122,11 @@
             <div class="font-press text-[10px] sm:text-xs text-neon-cyan glow-cyan tracking-widest mb-1">
               SPEC ▸ PRIVACY &amp; COMPLIANCE
             </div>
-            <div class="font-press text-[10px] sm:text-xs text-neon-amber glow-amber tracking-widest">
+            <div class="font-press text-[10px] sm:text-xs text-neon-amber glow-amber tracking-widest mb-1">
               GAMERTAG ▸ @SimianPrimus
+            </div>
+            <div class="font-press text-[10px] sm:text-xs text-neon-green glow-green tracking-widest">
+              STATUS ▸ OPEN TO CHAT <span class="blink">●</span>
             </div>
           </div>
         </div>
@@ -131,8 +134,8 @@
         <div class="divider">▼ BIO ▼</div>
 
         <p id="typewriter"
-           data-text="Full-stack engineer with a soft spot for privacy &amp; compliance. Two years into my first dev role at Dxtra, where I build embeddable consent platforms, AI-orchestrated document pipelines, and the React admin they run in. Polyglot — TS, Python, Java, SQL, GraphQL. Always picking up something new ・ see TRAINING ▼"
-           class="font-vt text-lg sm:text-xl text-neon-green leading-relaxed">Full-stack engineer with a soft spot for privacy &amp; compliance. Two years into my first dev role at Dxtra, where I build embeddable consent platforms, AI-orchestrated document pipelines, and the React admin they run in. Polyglot — TS, Python, Java, SQL, GraphQL. Always picking up something new ・ see TRAINING ▼</p>
+           data-text="Full-stack engineer, two years in at Dxtra (my first dev job). I'm here for the problem-solving and getting to the bottom of thorny issues. The work got me into privacy specifically, and into the ethics of building software in general: very few industries shape the world this much with this little regulation, and that mismatch is interesting to me. Day to day: embeddable consent platforms, AI document pipelines, and the React admin behind them. Mostly TypeScript, plus Python, Java, SQL and GraphQL."
+           class="font-vt text-lg sm:text-xl text-neon-green leading-relaxed">Full-stack engineer, two years in at Dxtra (my first dev job). I'm here for the problem-solving and getting to the bottom of thorny issues. The work got me into privacy specifically, and into the ethics of building software in general: very few industries shape the world this much with this little regulation, and that mismatch is interesting to me. Day to day: embeddable consent platforms, AI document pipelines, and the React admin behind them. Mostly TypeScript, plus Python, Java, SQL and GraphQL.</p>
       </div>
     </section>
 
@@ -208,15 +211,15 @@
       <div class="retro-frame p-6 sm:p-8">
         <div class="font-press text-[10px] text-neon-pink glow-pink mb-4 tracking-widest">┃ FRONTEND ┃</div>
         <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 mb-6">
-          <div class="item">REACT 18<span class="tip">SPA work across dx-dashboard, dx-transparency-center; 100+ reusable components.</span></div>
-          <div class="item">NEXT.JS<span class="tip">Pages router on dxtra-site, App router on dx-demo. Turbopack, SSR, hydration fixes.</span></div>
+          <div class="item">REACT 18<span class="tip">SPA work on the admin and the embeddable widget; 100+ reusable components.</span></div>
+          <div class="item">NEXT.JS<span class="tip">Pages router on the marketing site, App router on a commerce demo. Turbopack, SSR, hydration fixes.</span></div>
           <div class="item">TYPESCRIPT<span class="tip">5.x strict everywhere. Zod at every boundary.</span></div>
-          <div class="item">VITE 7<span class="tip">Custom plugins incl. one that pins a stable widget entry filename across hashed builds.</span></div>
+          <div class="item">VITE 7<span class="tip">Custom plugins, including one that pins a stable widget entry filename across hashed builds.</span></div>
           <div class="item">MUI v7<span class="tip">Theming &amp; component overrides for the admin SPA.</span></div>
           <div class="item">TAILWIND<span class="tip">Tailwind 3 (platform), Tailwind 4 (marketing site), shadow-DOM-scoped utilities.</span></div>
-          <div class="item">ATOMICO<span class="tip">Web Components / Custom Elements. Embeddable shadow-DOM CMP widget.</span></div>
+          <div class="item">ATOMICO<span class="tip">Web Components / Custom Elements for an embeddable shadow-DOM widget.</span></div>
           <div class="item">TANSTACK<span class="tip">Router + Form + Zod for the onboarding wizard.</span></div>
-          <div class="item">APOLLO<span class="tip">Cache invalidation discipline, dual Hasura+Strapi endpoints.</span></div>
+          <div class="item">APOLLO<span class="tip">Cache invalidation discipline across dual GraphQL endpoints.</span></div>
           <div class="item">XSTATE 4<span class="tip">State machines for consent / rights workflows.</span></div>
           <div class="item">i18n<span class="tip">typesafe-i18n with build-time type generation, lazy locale chunks, BCP 47.</span></div>
           <div class="item">PLAYWRIGHT<span class="tip">E2E in CI; Vitest for unit.</span></div>
@@ -225,11 +228,11 @@
         <div class="font-press text-[10px] text-neon-cyan glow-cyan mb-4 tracking-widest">┃ BACKEND ┃</div>
         <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 mb-6">
           <div class="item cyan">NODE 22<span class="tip">TypeScript, Express 4, Vitest + Testcontainers.</span></div>
-          <div class="item cyan">FASTAPI<span class="tip">Python service for deterministic DID generation (SHA3-256).</span></div>
-          <div class="item cyan">MICRONAUT<span class="tip">Java 17→21 edge for the privacy-first tag manager.</span></div>
-          <div class="item cyan">LANGCHAIN<span class="tip">+ LangGraph multi-agent orchestration with Postgres checkpointing.</span></div>
+          <div class="item cyan">FASTAPI<span class="tip">Small Python service for deterministic ID generation with SHA3-256.</span></div>
+          <div class="item cyan">MICRONAUT<span class="tip">Java 17→21 edge for the tag manager.</span></div>
+          <div class="item cyan">LANGCHAIN<span class="tip">LangChain + LangGraph. Supervisor agent coordinating generation, translation, and audit specialists with Postgres checkpointing for long runs.</span></div>
           <div class="item cyan">STRIPE<span class="tip">Checkout, billing portal, 4-attempt cancellation flow.</span></div>
-          <div class="item cyan">OAUTH2<span class="tip">7+ providers: Linear, QuickBooks, Google Ads, SurveyMonkey, Eventbrite, WooCommerce.</span></div>
+          <div class="item cyan">OAUTH2<span class="tip">Production OAuth flows for seven SaaS platforms across project management, accounting, ad networks, and survey tooling.</span></div>
         </div>
 
         <div class="font-press text-[10px] text-neon-amber glow-amber mb-4 tracking-widest">┃ DATA &amp; MESSAGING ┃</div>
@@ -238,18 +241,18 @@
           <div class="item amber">HASURA<span class="tip">GraphQL with role-based metadata permissions across 4 roles.</span></div>
           <div class="item amber">MONGODB 6<span class="tip">Replica set, keyfile auth.</span></div>
           <div class="item amber">CLICKHOUSE<span class="tip">Cluster with S3 storage, column-oriented analytics ingest.</span></div>
-          <div class="item amber">REDIS 7<span class="tip">3-node Redlock cluster with circuit breaker. Sized t4g.micro→t4g.small to fix quorum.</span></div>
+          <div class="item amber">REDIS 7<span class="tip">3-node Redlock cluster with circuit breaker. Did the cluster sizing analysis for production capacity.</span></div>
           <div class="item amber">RABBITMQ 4<span class="tip">Outbound dispatcher fan-out, async PII event publishing.</span></div>
         </div>
 
         <div class="font-press text-[10px] text-neon-pink glow-pink mb-4 tracking-widest">┃ INFRA &amp; AI ┃</div>
         <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3">
-          <div class="item pink">AWS CDK v2<span class="tip">Contributing to the production CDK platform: Vercel apex DNS migration, email-auth records, CloudFront L2 refactor.</span></div>
-          <div class="item pink">CLOUDFRONT<span class="tip">L2 refactor + dynamic CORS for Transparency Center cross-origin embedding.</span></div>
-          <div class="item pink">REDLOCK<span class="tip">Redis 3-node Redlock with circuit breaker. Sized t4g.micro → t4g.small to resolve quorum failures.</span></div>
-          <div class="item pink">DOCKER<span class="tip">Authored a ~58KB dev.sh orchestrating 60+ local services with health checks + Secrets Manager.</span></div>
+          <div class="item pink">AWS CDK v2<span class="tip">Contributing to a production CDK platform across two regions. DNS migrations, email-auth wiring, CloudFront work.</span></div>
+          <div class="item pink">CLOUDFRONT<span class="tip">L2 refactor and dynamic CORS for cross-origin widget embedding.</span></div>
+          <div class="item pink">REDLOCK<span class="tip">Redis 3-node Redlock with circuit breaker. Did the cluster sizing analysis for production capacity.</span></div>
+          <div class="item pink">DOCKER<span class="tip">Wrote a ~58KB local-env orchestrator covering 60+ services with health checks and secrets management.</span></div>
           <div class="item pink">CLAUDE<span class="tip">Anthropic Sonnet 3.5 → 4.6 with extended thinking.</span></div>
-          <div class="item pink">GPT-4<span class="tip">OpenAI dual-provider fallback in dx-conduit.</span></div>
+          <div class="item pink">GPT-4<span class="tip">OpenAI dual-provider fallback alongside Claude.</span></div>
         </div>
       </div>
     </section>
@@ -273,33 +276,57 @@
 
           <div class="quest">
             <div class="font-press text-xs text-neon-green glow-green mb-2">★ CONSENT MANAGEMENT PLATFORM</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">dx-transparency-center ・ 757 commits</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">embeddable consent widget ・ 757 commits</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Got to build an embeddable CMP from a blank slate — cookie banner, preference centre, data-subject-rights forms, tag-injection orchestration — shipping as a single Shadow-DOM-isolated bundle across 12 locales. Atomico Web Components, Apollo, XState, Nhost. Peak month: <span class="text-neon-amber">242 commits in November 2025</span>.
+              Built a Consent Management Platform from scratch. Hardest part: most consents come from anonymous visitors on first contact, but they need to persist so that when the user later signs in, every preference is still there waiting for them to take control of. Ships in 12 locales as a single Shadow-DOM-isolated bundle that drops into any host site. Atomico Web Components, Apollo, XState. The same anonymous-to-authenticated state pattern applies any time you need pre-login product state to survive sign-up. November 2025 was a <span class="text-neon-amber">242-commit month</span>.
+            </p>
+          </div>
+
+          <div class="quest cyan">
+            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">★ PRIVACY CENTRE ・ DUAL-MODE</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">hosted SPA + embed bundle</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              This one is mostly mine. Built the user-facing privacy dashboard where data subjects review what's held about them, change their preferences, and submit rights requests (export, deletion, correction). Same codebase ships two ways: as a hosted SPA at a stable domain for direct customer link-outs, and as Web Components packaged into the embeddable bundle so customers can drop the same UI inside their own sites with shadow-DOM style isolation. The build-once-deploy-twice pattern is reusable any time a UI needs to live both as your own product surface and as a library someone else embeds inside theirs.
             </p>
           </div>
 
           <div class="quest pink">
-            <div class="font-press text-xs text-neon-pink glow-pink mb-2">★ WEBHOOK HUB &amp; AI ORCHESTRATION</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">dx-conduit ・ 971 commits</div>
+            <div class="font-press text-xs text-neon-pink glow-pink mb-2">★ WEBHOOK HUB</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">API gateway / event hub ・ 971 commits</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              20+ integration webhook hub — timing-safe HMAC, distributed Redlock idempotency, OAuth2 across 7+ SaaS providers (Linear, QuickBooks, Google Ads, SurveyMonkey, Eventbrite, WooCommerce, Shopify…). Plus the LangGraph multi-agent privacy-document pipeline across 11 languages × 7 jurisdictions (GDPR, CCPA/CPRA, PIPA, LGPD, PDPA, PIPEDA), with autonomous glossary + translation sub-agents.
+              A 20+ integration webhook hub. Timing-safe HMAC, distributed Redlock idempotency, OAuth2 with seven SaaS platforms, Zod schemas at every boundary. The pattern is one consistent receive-validate-deduplicate path across vendors that all sign requests differently and each have their own idea of what a "retry" means. It applies any time you need a single trustworthy ingest layer that keeps the rest of the stack ignorant of vendor quirks.
+            </p>
+          </div>
+
+          <div class="quest">
+            <div class="font-press text-xs text-neon-green glow-green mb-2">★ AI ASSISTANTS ・ SHARED INFRASTRUCTURE</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">multi-turn ・ multi-modal ・ tier-aware</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              Built and maintain a shared chat infrastructure that powers multiple distinct AI assistants across the product. The fun part isn't the chat itself, it's everything around it: multi-turn session state, per-user and per-plan rate limiting plus monthly quota enforcement, model upgrade migrations (Sonnet 3.5 → 4.6 with extended thinking, which means re-tuning prompts and behaviour around the new defaults), multimodal input (image URLs decoded to base64 for the model), and graceful degradation when upstream model APIs misbehave. Each assistant has its own system prompt, tool surface, and context-injection logic, but they all share the same conversation engine. Reusable any time a product wants to ship more than one conversational surface without ending up with N copies of the same plumbing.
+            </p>
+          </div>
+
+          <div class="quest pink">
+            <div class="font-press text-xs text-neon-pink glow-pink mb-2">★ MULTI-AGENT AI ORCHESTRATION</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">supervisor + specialists ・ LangGraph</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              A LangGraph multi-agent system that generates, translates, and audits regulated long-form documents. The supervisor coordinates three specialists: a generation agent that assembles jurisdiction-specific output from a structured knowledge base, a translation agent that handles each target locale while preserving placeholders and identifiers, and an audit agent that walks the output for hallucinated terminology, missing required sections, and regulatory drift. Postgres-checkpointed state so multi-hour runs survive restarts and can be inspected mid-flight. Supervisor + specialist agents + checkpointed state is the standard agentic shape. Reusable wherever long-form structured generation needs to be traceable: legal, healthcare, accountancy, regulated marketing copy.
             </p>
           </div>
 
           <div class="quest cyan">
             <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">★ REACT ADMIN ・ BOSS BATTLE</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">dx-dashboard ・ 1,336 commits</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">React admin SPA ・ 1,336 commits</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Onboarding wizard, consent-form editor, DPIA / ROPA dashboard, data-processor management for 15+ integrations, AI assistants suite, rights-request workflows, MFA + cross-domain auth sync. 100+ reusable components, 120+ custom hooks averaging ~90 LOC.
+              Multi-step onboarding flows with partial saves, complex domain editors, regulatory dashboards, integration management for 15+ third-party platforms, embedded AI assistants, request-routing workflows, MFA and cross-domain auth sync. 100+ reusable components and 120+ custom hooks (averaging around 90 LOC). Most of these patterns transfer cleanly to any data-heavy admin SPA.
             </p>
           </div>
 
           <div class="quest amber">
             <div class="font-press text-xs text-neon-amber glow-amber mb-2">★ SCHEMA-AS-CODE ・ HASURA</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">~1,900 migrations across the privacy schema</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">~1,900 migrations on a regulated-data schema</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Authored ~1,900 Hasura migrations spanning data-subject preferences, processor capabilities, consent disclosure types, jurisdictional law hierarchies. Strict additive patterns for reference data — add row → reassign refs → orphan → delete only after prod confirms — so live consents never break. Role-based metadata permissions across <span class="text-neon-cyan">anonymous</span> / <span class="text-neon-cyan">dataSubject</span> / <span class="text-neon-cyan">dataController</span> / <span class="text-neon-cyan">admin</span>.
+              Around 1,900 Hasura migrations across a complex regulated-data schema. For reference data the rule is strictly additive: add row, reassign refs, orphan, only delete after prod confirms. Live state never breaks on a single deploy that way. Role-based metadata permissions across four trust tiers. Same discipline applies any time regulated data has to migrate without breaking live records, which is most healthcare / fintech / privacy-adjacent systems.
             </p>
           </div>
 
@@ -307,52 +334,52 @@
             <div class="font-press text-xs text-neon-green glow-green mb-2">★ i18N AT SCALE</div>
             <div class="font-vt text-lg text-neon-cyan mb-1">11 platform locales ・ 19 marketing locales</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Drove the typesafe-i18n migration across three production apps (dx-dashboard, dx-transparency-center, dx-conduit's AI generation) and the public marketing site. Built a US→UK content-transformation pipeline that walks the en_US tree and emits en_GB JSON with regulatory-term substitutions while preserving placeholders + identifiers. Locale-aware AI document generation with sanctions compliance (OFAC ru-RU block). Solved BCP 47 hyphen-vs-underscore, Next.js SSR hydration mismatch, and lazy locale chunk traps along the way.
+              Did the typesafe-i18n migration across three production apps and a public marketing site. Wrote a US→UK content-transformation pipeline that walks an en_US tree and emits en_GB JSON with regulatory-term swaps, keeping placeholders and identifiers intact. AI document generation is locale-aware too, with sanctions-aware locale gating. Hit and fixed the usual i18n traps along the way: BCP 47 hyphen vs underscore, Next.js SSR hydration mismatch, lazy locale chunking. The setup transfers to any product that has to vary regulatory or legal content across markets.
             </p>
           </div>
 
           <div class="quest pink">
             <div class="font-press text-xs text-neon-pink glow-pink mb-2">★ DEVELOPER EXPERIENCE TOOLING</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">dx-repos.sh ・ regression-cmp.sh ・ dev.sh</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">multi-repo orchestrators</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Authored the orchestrators the platform team runs day to day: <span class="text-neon-amber">dx-repos.sh</span> (27KB, branch sync + bulk ops across 30+ repos), <span class="text-neon-amber">regression-cmp.sh</span> (cross-repo CMP regression harness combining 4 test suites), and <span class="text-neon-amber">dev.sh</span> (~58KB local-environment orchestrator handling MongoDB keyfiles, SSL certs, ghcr.io auth, AWS Secrets Manager, health checks, and 60+ service lifecycle).
+              Wrote the multi-repo orchestrators the platform team runs day to day. A <span class="text-neon-amber">27KB</span> branch-sync and bulk-ops tool covering 30+ repos. A cross-repo regression harness that combines four separate test suites into one verifiable green / red signal. A <span class="text-neon-amber">~58KB</span> local-env orchestrator that handles container-registry auth, secrets management, health checks, and 60+ services. Useful anywhere a small team is coordinating work across many repos without buying into a heavyweight monorepo.
             </p>
           </div>
 
           <div class="quest cyan">
             <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">★ TAG MANAGER EDGE</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">dx-tagmanager ・ 282 commits</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">Java edge service ・ 282 commits</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Privacy-first Java/Micronaut edge service (2.5→4.8, Java 17→21 upgrade) with Prometheus metrics, MaxMind GeoLite2 geo-location, RabbitMQ async PII event publishing, Google Consent Mode v2 BASIC↔ADVANCED transitions.
+              A Java/Micronaut edge service for high-throughput tag delivery (Micronaut 2.5→4.8, Java 17→21 upgrade). Prometheus metrics, MaxMind GeoLite2 geo-location, async PII event publishing through a message queue, Google Consent Mode v2 BASIC↔ADVANCED transitions. Geo-aware, async-publish, low-latency: reusable shape for any consent or analytics gateway sitting in front of a downstream pipeline.
             </p>
           </div>
 
           <div class="quest amber">
             <div class="font-press text-xs text-neon-amber glow-amber mb-2">★ AI-SEARCH OPTIMISATION</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">dxtra-site ・ 76 commits</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">marketing site ・ 76 commits</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Dynamic Next.js sitemap, schema.org JSON-LD across 19 page templates, <span class="text-neon-amber glow-amber">llms.txt</span> for AI-crawler discoverability (ChatGPT Search, Perplexity, Claude), production CSP/HSTS headers, 308 redirect map preserving SEO equity.
+              Dynamic Next.js sitemap, schema.org JSON-LD on 19 page templates, an <span class="text-neon-amber glow-amber">llms.txt</span> for AI crawlers (ChatGPT Search, Perplexity, Claude), production CSP/HSTS headers, and a 308 redirect map so old URLs keep their SEO. Standard kit for any 2026-era marketing site that wants to be findable in both classic search and AI-driven discovery.
             </p>
           </div>
         </div>
 
         <!-- ─── IN PROGRESS ─── -->
         <div data-panel="active" class="panel hidden">
-          <p class="font-vt text-base text-neon-pink/80 mb-5">▸ What I'm building right now — there's loads, here's a sample.</p>
+          <p class="font-vt text-base text-neon-pink/80 mb-5">▸ What I'm building right now. There's a lot, this is a sample.</p>
 
           <div class="quest pink">
-            <div class="font-press text-xs text-neon-pink glow-pink mb-2">▶ TWO-WAY CONSENT &amp; PREFERENCE SYNC</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">dx-conduit ・ ongoing</div>
+            <div class="font-press text-xs text-neon-pink glow-pink mb-2">▶ TWO-WAY PREFERENCE SYNC</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">server-side state work ・ ongoing</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Building bidirectional sync between data-subject preferences and customer destinations — dispatcher fan-out, audit logging, shadow-mode regression testing so legacy paths can migrate without breaking live consents. Topic-based subscription preferences for Customer.io are wired; broadening the cascade across more platforms now.
+              Building bidirectional sync between user preferences and downstream third-party destinations, with audit guarantees and shadow-mode regression testing so legacy outbound-only paths can be replaced without breaking live records. Same machinery applies any time you need state to converge across systems that were never designed to talk back.
             </p>
           </div>
 
           <div class="quest">
-            <div class="font-press text-xs text-neon-green glow-green mb-2">▶ BRING-YOUR-OWN PROCESSOR</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">dx-dashboard ・ ongoing</div>
+            <div class="font-press text-xs text-neon-green glow-green mb-2">▶ GENERIC PROCESSOR REGISTRATION</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">admin-UX work ・ ongoing</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Extending the data-processor management UX from the 15+ predefined integrations to a generic flow where a controller can register <span class="text-neon-amber">any</span> processor — capability declaration, dynamic onboarding form generation, OAuth or form-based callback handling, audit-log integration. The "long tail" version of what we ship today.
+              Going from a curated set of predefined integrations to a generic flow where any third-party can be registered with declarative capability and onboarding metadata. Reusable pattern for any catalog-style admin tool that wants to handle the long tail without hard-coding every entry.
             </p>
           </div>
 
@@ -360,7 +387,7 @@
             <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">▶ THIS PORTFOLIO</div>
             <div class="font-vt text-lg text-neon-cyan mb-1">SimianPrimus.github.io ・ retro arcade rebuild</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              The site you're standing in. Iterating on a retro-arcade rebuild — Press Start 2P, neon palette, scanlines, the works. Same aesthetic I keep returning to in my side projects.
+              The site you're standing in. Retro-arcade rebuild: Press Start 2P, neon palette, scanlines. Same look I keep coming back to.
             </p>
           </div>
 
@@ -368,7 +395,7 @@
             <div class="font-press text-xs text-neon-amber glow-amber mb-2">▶ MOBILE SDK</div>
             <div class="font-vt text-lg text-neon-cyan mb-1">native iOS + Android ・ planned</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Bringing Dxtra's consent + rights-request primitives to native mobile apps without a webview detour — same building blocks the embeddable web widget exposes today, surfaced as a proper SDK. Next on the build queue.
+              A native iOS and Android SDK so the same product primitives the embeddable web widget exposes are available to mobile apps without a webview detour. Generic problem of porting a stateful product across runtimes. Next on the build queue.
             </p>
           </div>
         </div>
@@ -386,21 +413,21 @@
               <span>EXP</span><span>65 / 100</span>
             </div>
             <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Comfortable with the patterns and have shipped focused workstreams (Vercel apex migration, email-auth records, Redlock sizing, CloudFront L2 refactor). Goal: get to where I can architect a multi-region service end-to-end without leaning on existing stacks. Still levelling up on networking and CFN logical-ID gymnastics.
+              I'm comfortable with the patterns and have shipped specific bits in production (DNS migrations, email-auth records, Redis cluster sizing, CloudFront work). Goal: get to where I can design a multi-region service end-to-end from a clean slate. Still levelling up on networking specifics and CloudFormation logical-ID gymnastics.
             </p>
           </div>
 
           <div class="quest cyan opacity-70">
             <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">▲ ??? ・ NEXT SKILL</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/70 italic leading-snug">
-              ▸ slot reserved — tell me what you're picking up next ◂
+              ▸ slot reserved. tell me what to put here ◂
             </p>
           </div>
 
           <div class="quest cyan opacity-70">
             <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">▲ ??? ・ NEXT SKILL</div>
             <p class="font-vt text-base sm:text-lg text-neon-green/70 italic leading-snug">
-              ▸ slot reserved — tell me what you're picking up next ◂
+              ▸ slot reserved. tell me what to put here ◂
             </p>
           </div>
         </div>
@@ -413,6 +440,9 @@
       <h2 class="section-heading text-base sm:text-xl mb-6">▶ SAVE GAME ・ CONTACT</h2>
 
       <div class="retro-frame p-6 sm:p-8">
+        <div class="font-press text-[10px] text-neon-green glow-green tracking-widest mb-4">
+          <span class="blink">●</span> OPEN TO CHAT ・ DROP A LINE
+        </div>
         <div class="font-vt text-lg text-neon-amber glow-amber mb-4">▸ SELECT ONE</div>
         <nav class="flex flex-col gap-1">
           <a class="menu-link" href="https://www.linkedin.com/in/sarah-leigh-mcgregor/" target="_blank" rel="noopener noreferrer">
