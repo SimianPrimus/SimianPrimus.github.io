@@ -1,22 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sarah McGregor: Portfolio</title>
-    <link href="/dist/output.css" rel="stylesheet" />
-  </head>
-  <body class="bg-custom-image bg-cover animate-slidein font-source-code-pro hide-scrollbar p-main">
-    <div class="p-12 w-screen p-main">
-      <div class="container mx-auto items-center bg-shades-cultured-50 p-48 pb-0">
-        <h1 class="text-4xl text-start pb-24">Sarah McGregor</h1>
-        <h2 class="text-2xl text-start">Full stack developer</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sarah McGregor — full-stack engineer, privacy & compliance specialist. Retro arcade portfolio." />
+  <title>SARAH MCGREGOR // FULL-STACK ENGINEER</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            neon: {
+              green:  '#00ff00',
+              pink:   '#ff00ff',
+              cyan:   '#00ffff',
+              red:    '#ff0000',
+              amber:  '#ffb000',
+              yellow: '#ffff00',
+            },
+          },
+          fontFamily: {
+            press: ['"Press Start 2P"', 'monospace'],
+            vt:    ['"VT323"', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="retro.css">
+
+  <noscript>
+    <style>
+      #press-start { display: none !important; }
+      #main { opacity: 1 !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .bar > span { width: 100% !important; }
+    </style>
+  </noscript>
+</head>
+<body class="bg-black text-neon-green">
+
+  <!-- ============================================================ -->
+  <!-- PRESS START SCREEN                                            -->
+  <!-- ============================================================ -->
+  <div id="press-start" class="press-start-screen" role="button" tabindex="0" aria-label="Press space or click to start">
+    <div class="font-press text-neon-green text-2xl sm:text-4xl md:text-5xl pulse-glow mb-4">SARAH MCGREGOR</div>
+    <div class="font-press text-neon-cyan glow-cyan text-xs sm:text-base mb-12 tracking-widest">★ FULL-STACK ENGINEER ★</div>
+    <div class="font-press text-neon-pink glow-pink text-xs sm:text-sm blink mb-8">PRESS [ SPACE ] TO START</div>
+    <div class="font-vt text-neon-amber text-base sm:text-lg opacity-80">© 2024–<span id="year">2026</span> ・ PLAYER 1 EDITION ・ V2.0</div>
+    <div class="font-vt text-neon-green text-sm opacity-50 mt-4">▲ ▲ ▼ ▼ ◄ ► ◄ ► B A</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- KONAMI UNLOCK BANNER                                          -->
+  <!-- ============================================================ -->
+  <div id="unlock-banner" class="unlock-banner" aria-hidden="true">
+    ★ ACHIEVEMENT UNLOCKED ★<br/>
+    <span class="text-neon-cyan glow-cyan text-sm block mt-3">DEVELOPER MODE</span>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- HUD                                                            -->
+  <!-- ============================================================ -->
+  <div class="hud">
+    <div class="row">PLAYER 1<span class="blink ml-2 text-neon-green">●</span></div>
+    <div class="row">SCORE <span id="coin-count">0000</span></div>
+  </div>
+  <div class="hud-right">
+    <div>WORLD 1-1</div>
+    <div class="text-neon-pink glow-pink">@SIMIANPRIMUS</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- MAIN                                                           -->
+  <!-- ============================================================ -->
+  <main id="main" class="opacity-0 transition-opacity duration-700 max-w-5xl mx-auto px-4 sm:px-6 md:px-10 py-16 sm:py-24">
+
+    <!-- ─── HERO / PLAYER PROFILE ───────────────────────────── -->
+    <section class="reveal mb-16">
+      <div class="retro-frame p-6 sm:p-10 md:p-14">
+        <div class="flex items-start justify-between flex-wrap gap-4 mb-6">
+          <div class="font-press text-[10px] sm:text-xs text-neon-amber glow-amber tracking-widest">▶ PLAYER PROFILE</div>
+          <div class="font-press text-[10px] sm:text-xs text-neon-cyan glow-cyan">LV.24</div>
+        </div>
+
+        <div class="flex items-center gap-6 sm:gap-10 flex-wrap">
+          <!-- Pixel sprite, inline SVG. 16x16 cells, scaled up. -->
+          <svg class="sprite sprite-bob shrink-0" width="96" height="96" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
+            <!-- hat -->
+            <rect x="4" y="1" width="8" height="1" fill="#ff00ff"/>
+            <rect x="3" y="2" width="10" height="2" fill="#ff00ff"/>
+            <!-- face -->
+            <rect x="4" y="4" width="8" height="4" fill="#00ffff"/>
+            <rect x="6" y="5" width="1" height="1" fill="#000"/>
+            <rect x="9" y="5" width="1" height="1" fill="#000"/>
+            <rect x="6" y="7" width="4" height="1" fill="#000"/>
+            <!-- body -->
+            <rect x="3" y="8" width="10" height="4" fill="#00ff00"/>
+            <rect x="7" y="9" width="2" height="2" fill="#ffb000"/>
+            <!-- legs -->
+            <rect x="4" y="12" width="3" height="3" fill="#ff00ff"/>
+            <rect x="9" y="12" width="3" height="3" fill="#ff00ff"/>
+            <rect x="3" y="15" width="4" height="1" fill="#000"/>
+            <rect x="9" y="15" width="4" height="1" fill="#000"/>
+          </svg>
+
+          <div class="flex-1 min-w-[260px]">
+            <h1 class="player-name font-press text-2xl sm:text-3xl md:text-4xl text-neon-green glow-green leading-tight mb-3">
+              SARAH<br/>MCGREGOR
+            </h1>
+            <div class="font-press text-[10px] sm:text-xs text-neon-pink glow-pink tracking-widest mb-1">
+              CLASS ▸ FULL-STACK ENGINEER
+            </div>
+            <div class="font-press text-[10px] sm:text-xs text-neon-cyan glow-cyan tracking-widest mb-1">
+              SPEC ▸ PRIVACY &amp; COMPLIANCE
+            </div>
+            <div class="font-press text-[10px] sm:text-xs text-neon-amber glow-amber tracking-widest">
+              GAMERTAG ▸ @SimianPrimus
+            </div>
+          </div>
+        </div>
+
+        <div class="divider">▼ BIO ▼</div>
+
+        <p id="typewriter"
+           data-text="Full-stack engineer with a soft spot for privacy &amp; compliance. Two years into my first dev role at Dxtra, where I build embeddable consent platforms, AI-orchestrated document pipelines, and the React admin they run in. Polyglot — TS, Python, Java, SQL, GraphQL. Always picking up something new ・ see TRAINING ▼"
+           class="font-vt text-lg sm:text-xl text-neon-green leading-relaxed">Full-stack engineer with a soft spot for privacy &amp; compliance. Two years into my first dev role at Dxtra, where I build embeddable consent platforms, AI-orchestrated document pipelines, and the React admin they run in. Polyglot — TS, Python, Java, SQL, GraphQL. Always picking up something new ・ see TRAINING ▼</p>
       </div>
-      <div class="">
-        <p class="relative w-full text-justify break-words bg-shades-cultured-50 p-48">
-          I'm an associate software engineer passionate about crafting sleek, functional web applications. With solid experience in CSS, TailwindCSS, and React for front-end development, I combine TypeScript and MUI to build intuitive user interfaces. On the back end, I work with Node.js, Express.js, and Strapi, leveraging databases like MySQL and Postgres. I’m adept with tools like Nhost and Hasura to streamline development. Always eager to learn and grow, I’m focused on delivering high-quality code and looking forward to tackling new challenges.
-        </p>
+    </section>
+
+    <!-- ─── CHARACTER STATS ──────────────────────────────────── -->
+    <section class="reveal mb-16">
+      <h2 class="section-heading text-base sm:text-xl mb-6">▶ CHARACTER STATS</h2>
+
+      <div class="retro-frame green p-6 sm:p-8">
+        <div class="space-y-5">
+          <div>
+            <div class="flex justify-between font-press text-[10px] sm:text-xs mb-2">
+              <span class="text-neon-green">HP ・ COMMITS</span>
+              <span class="text-neon-amber glow-amber">4,850</span>
+            </div>
+            <div class="bar reveal"><span></span></div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-press text-[10px] sm:text-xs mb-2">
+              <span class="text-neon-pink">MP ・ REPOS CLEARED</span>
+              <span class="text-neon-amber glow-amber">11</span>
+            </div>
+            <div class="bar pink reveal"><span></span></div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-press text-[10px] sm:text-xs mb-2">
+              <span class="text-neon-cyan">EXP ・ HASURA MIGRATIONS</span>
+              <span class="text-neon-amber glow-amber">~1,900</span>
+            </div>
+            <div class="bar cyan reveal"><span></span></div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-press text-[10px] sm:text-xs mb-2">
+              <span class="text-neon-amber">i18n ・ LOCALES SHIPPED</span>
+              <span class="text-neon-amber glow-amber">11 ⊕ 19</span>
+            </div>
+            <div class="bar amber reveal"><span></span></div>
+          </div>
+        </div>
+
+        <div class="divider">▼ LANGUAGES SPOKEN ▼</div>
+
+        <div class="flex flex-wrap gap-2 sm:gap-3">
+          <span class="item">TS</span>
+          <span class="item cyan">JS</span>
+          <span class="item pink">PY</span>
+          <span class="item amber">JAVA</span>
+          <span class="item">SQL</span>
+          <span class="item cyan">BASH</span>
+          <span class="item pink">GRAPHQL</span>
+        </div>
+
+        <!-- Hidden until Konami -->
+        <div id="secret-stats" class="hidden mt-8 p-4 border-2 border-neon-yellow font-vt text-neon-yellow glow-amber text-base">
+          <div class="font-press text-xs mb-3">★ DEBUG STATS UNLOCKED ★</div>
+          <ul class="list-none space-y-1">
+            <li>▸ AI providers wired: Claude (Sonnet 3.5 → 4.6), GPT-4</li>
+            <li>▸ Webhook integrations shipped: 20+</li>
+            <li>▸ ECS Fargate constructs in CDK: 15+</li>
+            <li>▸ Custom React hooks authored: 120+</li>
+            <li>▸ Active dev career: May 2024 → present (Year 2)</li>
+          </ul>
+        </div>
       </div>
+    </section>
+
+    <!-- ─── INVENTORY (TECH STACK) ───────────────────────────── -->
+    <section class="reveal mb-16">
+      <h2 class="section-heading text-base sm:text-xl mb-6">▶ INVENTORY ・ TECH STACK</h2>
+
+      <div class="retro-frame p-6 sm:p-8">
+        <div class="font-press text-[10px] text-neon-pink glow-pink mb-4 tracking-widest">┃ FRONTEND ┃</div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 mb-6">
+          <div class="item">REACT 18<span class="tip">SPA work across dx-dashboard, dx-transparency-center; 100+ reusable components.</span></div>
+          <div class="item">NEXT.JS<span class="tip">Pages router on dxtra-site, App router on dx-demo. Turbopack, SSR, hydration fixes.</span></div>
+          <div class="item">TYPESCRIPT<span class="tip">5.x strict everywhere. Zod at every boundary.</span></div>
+          <div class="item">VITE 7<span class="tip">Custom plugins incl. one that pins a stable widget entry filename across hashed builds.</span></div>
+          <div class="item">MUI v7<span class="tip">Theming &amp; component overrides for the admin SPA.</span></div>
+          <div class="item">TAILWIND<span class="tip">Tailwind 3 (platform), Tailwind 4 (marketing site), shadow-DOM-scoped utilities.</span></div>
+          <div class="item">ATOMICO<span class="tip">Web Components / Custom Elements. Embeddable shadow-DOM CMP widget.</span></div>
+          <div class="item">TANSTACK<span class="tip">Router + Form + Zod for the onboarding wizard.</span></div>
+          <div class="item">APOLLO<span class="tip">Cache invalidation discipline, dual Hasura+Strapi endpoints.</span></div>
+          <div class="item">XSTATE 4<span class="tip">State machines for consent / rights workflows.</span></div>
+          <div class="item">i18n<span class="tip">typesafe-i18n with build-time type generation, lazy locale chunks, BCP 47.</span></div>
+          <div class="item">PLAYWRIGHT<span class="tip">E2E in CI; Vitest for unit.</span></div>
+        </div>
+
+        <div class="font-press text-[10px] text-neon-cyan glow-cyan mb-4 tracking-widest">┃ BACKEND ┃</div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 mb-6">
+          <div class="item cyan">NODE 22<span class="tip">TypeScript, Express 4, Vitest + Testcontainers.</span></div>
+          <div class="item cyan">FASTAPI<span class="tip">Python service for deterministic DID generation (SHA3-256).</span></div>
+          <div class="item cyan">MICRONAUT<span class="tip">Java 17→21 edge for the privacy-first tag manager.</span></div>
+          <div class="item cyan">LANGCHAIN<span class="tip">+ LangGraph multi-agent orchestration with Postgres checkpointing.</span></div>
+          <div class="item cyan">STRIPE<span class="tip">Checkout, billing portal, 4-attempt cancellation flow.</span></div>
+          <div class="item cyan">OAUTH2<span class="tip">7+ providers: Linear, QuickBooks, Google Ads, SurveyMonkey, Eventbrite, WooCommerce.</span></div>
+        </div>
+
+        <div class="font-press text-[10px] text-neon-amber glow-amber mb-4 tracking-widest">┃ DATA &amp; MESSAGING ┃</div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 mb-6">
+          <div class="item amber">POSTGRES 17<span class="tip">~1,900 Hasura migrations across the privacy schema.</span></div>
+          <div class="item amber">HASURA<span class="tip">GraphQL with role-based metadata permissions across 4 roles.</span></div>
+          <div class="item amber">MONGODB 6<span class="tip">Replica set, keyfile auth.</span></div>
+          <div class="item amber">CLICKHOUSE<span class="tip">Cluster with S3 storage, column-oriented analytics ingest.</span></div>
+          <div class="item amber">REDIS 7<span class="tip">3-node Redlock cluster with circuit breaker. Sized t4g.micro→t4g.small to fix quorum.</span></div>
+          <div class="item amber">RABBITMQ 4<span class="tip">Outbound dispatcher fan-out, async PII event publishing.</span></div>
+        </div>
+
+        <div class="font-press text-[10px] text-neon-pink glow-pink mb-4 tracking-widest">┃ INFRA &amp; AI ┃</div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3">
+          <div class="item pink">AWS CDK v2<span class="tip">Contributing to the production CDK platform: Vercel apex DNS migration, email-auth records, CloudFront L2 refactor.</span></div>
+          <div class="item pink">CLOUDFRONT<span class="tip">L2 refactor + dynamic CORS for Transparency Center cross-origin embedding.</span></div>
+          <div class="item pink">REDLOCK<span class="tip">Redis 3-node Redlock with circuit breaker. Sized t4g.micro → t4g.small to resolve quorum failures.</span></div>
+          <div class="item pink">DOCKER<span class="tip">Authored a ~58KB dev.sh orchestrating 60+ local services with health checks + Secrets Manager.</span></div>
+          <div class="item pink">CLAUDE<span class="tip">Anthropic Sonnet 3.5 → 4.6 with extended thinking.</span></div>
+          <div class="item pink">GPT-4<span class="tip">OpenAI dual-provider fallback in dx-conduit.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── QUEST LOG (TABBED) ───────────────────────────────── -->
+    <section class="reveal mb-16">
+      <h2 class="section-heading text-base sm:text-xl mb-6">▶ QUEST LOG</h2>
+
+      <div class="retro-frame green p-6 sm:p-8">
+
+        <!-- Tabs -->
+        <div class="flex flex-wrap gap-2 sm:gap-3 mb-6 pb-5 border-b-2 border-neon-green/25" role="tablist">
+          <button data-tab="completed" class="tab active" role="tab">★ ACHIEVEMENTS</button>
+          <button data-tab="active"    class="tab pink"  role="tab">▶ IN PROGRESS</button>
+          <button data-tab="training"  class="tab cyan"  role="tab">▲ TRAINING</button>
+        </div>
+
+        <!-- ─── ACHIEVEMENTS ─── -->
+        <div data-panel="completed" class="panel">
+          <p class="font-vt text-base text-neon-green/70 mb-5">▸ Quests cleared. Loot acquired.</p>
+
+          <div class="quest">
+            <div class="font-press text-xs text-neon-green glow-green mb-2">★ CONSENT MANAGEMENT PLATFORM</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">dx-transparency-center ・ 757 commits</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              Got to build an embeddable CMP from a blank slate — cookie banner, preference centre, data-subject-rights forms, tag-injection orchestration — shipping as a single Shadow-DOM-isolated bundle across 12 locales. Atomico Web Components, Apollo, XState, Nhost. Peak month: <span class="text-neon-amber">242 commits in November 2025</span>.
+            </p>
+          </div>
+
+          <div class="quest pink">
+            <div class="font-press text-xs text-neon-pink glow-pink mb-2">★ WEBHOOK HUB &amp; AI ORCHESTRATION</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">dx-conduit ・ 971 commits</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              20+ integration webhook hub — timing-safe HMAC, distributed Redlock idempotency, OAuth2 across 7+ SaaS providers (Linear, QuickBooks, Google Ads, SurveyMonkey, Eventbrite, WooCommerce, Shopify…). Plus the LangGraph multi-agent privacy-document pipeline across 11 languages × 7 jurisdictions (GDPR, CCPA/CPRA, PIPA, LGPD, PDPA, PIPEDA), with autonomous glossary + translation sub-agents.
+            </p>
+          </div>
+
+          <div class="quest cyan">
+            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">★ REACT ADMIN ・ BOSS BATTLE</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">dx-dashboard ・ 1,336 commits</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              Onboarding wizard, consent-form editor, DPIA / ROPA dashboard, data-processor management for 15+ integrations, AI assistants suite, rights-request workflows, MFA + cross-domain auth sync. 100+ reusable components, 120+ custom hooks averaging ~90 LOC.
+            </p>
+          </div>
+
+          <div class="quest amber">
+            <div class="font-press text-xs text-neon-amber glow-amber mb-2">★ SCHEMA-AS-CODE ・ HASURA</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">~1,900 migrations across the privacy schema</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              Authored ~1,900 Hasura migrations spanning data-subject preferences, processor capabilities, consent disclosure types, jurisdictional law hierarchies. Strict additive patterns for reference data — add row → reassign refs → orphan → delete only after prod confirms — so live consents never break. Role-based metadata permissions across <span class="text-neon-cyan">anonymous</span> / <span class="text-neon-cyan">dataSubject</span> / <span class="text-neon-cyan">dataController</span> / <span class="text-neon-cyan">admin</span>.
+            </p>
+          </div>
+
+          <div class="quest">
+            <div class="font-press text-xs text-neon-green glow-green mb-2">★ i18N AT SCALE</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">11 platform locales ・ 19 marketing locales</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              Drove the typesafe-i18n migration across three production apps (dx-dashboard, dx-transparency-center, dx-conduit's AI generation) and the public marketing site. Built a US→UK content-transformation pipeline that walks the en_US tree and emits en_GB JSON with regulatory-term substitutions while preserving placeholders + identifiers. Locale-aware AI document generation with sanctions compliance (OFAC ru-RU block). Solved BCP 47 hyphen-vs-underscore, Next.js SSR hydration mismatch, and lazy locale chunk traps along the way.
+            </p>
+          </div>
+
+          <div class="quest pink">
+            <div class="font-press text-xs text-neon-pink glow-pink mb-2">★ DEVELOPER EXPERIENCE TOOLING</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">dx-repos.sh ・ regression-cmp.sh ・ dev.sh</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              Authored the orchestrators the platform team runs day to day: <span class="text-neon-amber">dx-repos.sh</span> (27KB, branch sync + bulk ops across 30+ repos), <span class="text-neon-amber">regression-cmp.sh</span> (cross-repo CMP regression harness combining 4 test suites), and <span class="text-neon-amber">dev.sh</span> (~58KB local-environment orchestrator handling MongoDB keyfiles, SSL certs, ghcr.io auth, AWS Secrets Manager, health checks, and 60+ service lifecycle).
+            </p>
+          </div>
+
+          <div class="quest cyan">
+            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">★ TAG MANAGER EDGE</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">dx-tagmanager ・ 282 commits</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              Privacy-first Java/Micronaut edge service (2.5→4.8, Java 17→21 upgrade) with Prometheus metrics, MaxMind GeoLite2 geo-location, RabbitMQ async PII event publishing, Google Consent Mode v2 BASIC↔ADVANCED transitions.
+            </p>
+          </div>
+
+          <div class="quest amber">
+            <div class="font-press text-xs text-neon-amber glow-amber mb-2">★ AI-SEARCH OPTIMISATION</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">dxtra-site ・ 76 commits</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              Dynamic Next.js sitemap, schema.org JSON-LD across 19 page templates, <span class="text-neon-amber glow-amber">llms.txt</span> for AI-crawler discoverability (ChatGPT Search, Perplexity, Claude), production CSP/HSTS headers, 308 redirect map preserving SEO equity.
+            </p>
+          </div>
+        </div>
+
+        <!-- ─── IN PROGRESS ─── -->
+        <div data-panel="active" class="panel hidden">
+          <p class="font-vt text-base text-neon-pink/80 mb-5">▸ What I'm building right now — there's loads, here's a sample.</p>
+
+          <div class="quest pink">
+            <div class="font-press text-xs text-neon-pink glow-pink mb-2">▶ TWO-WAY CONSENT &amp; PREFERENCE SYNC</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">dx-conduit ・ ongoing</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              Building bidirectional sync between data-subject preferences and customer destinations — dispatcher fan-out, audit logging, shadow-mode regression testing so legacy paths can migrate without breaking live consents. Topic-based subscription preferences for Customer.io are wired; broadening the cascade across more platforms now.
+            </p>
+          </div>
+
+          <div class="quest">
+            <div class="font-press text-xs text-neon-green glow-green mb-2">▶ BRING-YOUR-OWN PROCESSOR</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">dx-dashboard ・ ongoing</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              Extending the data-processor management UX from the 15+ predefined integrations to a generic flow where a controller can register <span class="text-neon-amber">any</span> processor — capability declaration, dynamic onboarding form generation, OAuth or form-based callback handling, audit-log integration. The "long tail" version of what we ship today.
+            </p>
+          </div>
+
+          <div class="quest cyan">
+            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">▶ THIS PORTFOLIO</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">SimianPrimus.github.io ・ retro arcade rebuild</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              The site you're standing in. Iterating on a retro-arcade rebuild — Press Start 2P, neon palette, scanlines, the works. Same aesthetic I keep returning to in my side projects.
+            </p>
+          </div>
+
+          <div class="quest amber">
+            <div class="font-press text-xs text-neon-amber glow-amber mb-2">▶ MOBILE SDK</div>
+            <div class="font-vt text-lg text-neon-cyan mb-1">native iOS + Android ・ planned</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              Bringing Dxtra's consent + rights-request primitives to native mobile apps without a webview detour — same building blocks the embeddable web widget exposes today, surfaced as a proper SDK. Next on the build queue.
+            </p>
+          </div>
+        </div>
+
+        <!-- ─── TRAINING ─── -->
+        <div data-panel="training" class="panel hidden">
+          <p class="font-vt text-base text-neon-cyan/80 mb-5">▸ Currently grinding XP on...</p>
+
+          <div class="quest cyan">
+            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">▲ AWS CDK ・ INFRA-AS-CODE</div>
+            <div class="text-neon-cyan">
+              <div class="xp-bar" style="--xp: 65%"><span></span></div>
+            </div>
+            <div class="flex justify-between font-press text-[9px] text-neon-cyan/80 mb-3">
+              <span>EXP</span><span>65 / 100</span>
+            </div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
+              Comfortable with the patterns and have shipped focused workstreams (Vercel apex migration, email-auth records, Redlock sizing, CloudFront L2 refactor). Goal: get to where I can architect a multi-region service end-to-end without leaning on existing stacks. Still levelling up on networking and CFN logical-ID gymnastics.
+            </p>
+          </div>
+
+          <div class="quest cyan opacity-70">
+            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">▲ ??? ・ NEXT SKILL</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/70 italic leading-snug">
+              ▸ slot reserved — tell me what you're picking up next ◂
+            </p>
+          </div>
+
+          <div class="quest cyan opacity-70">
+            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">▲ ??? ・ NEXT SKILL</div>
+            <p class="font-vt text-base sm:text-lg text-neon-green/70 italic leading-snug">
+              ▸ slot reserved — tell me what you're picking up next ◂
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── CONTACT / SAVE GAME ──────────────────────────────── -->
+    <section class="reveal mb-16">
+      <h2 class="section-heading text-base sm:text-xl mb-6">▶ SAVE GAME ・ CONTACT</h2>
+
+      <div class="retro-frame p-6 sm:p-8">
+        <div class="font-vt text-lg text-neon-amber glow-amber mb-4">▸ SELECT ONE</div>
+        <nav class="flex flex-col gap-1">
+          <a class="menu-link" href="https://www.linkedin.com/in/sarah-leigh-mcgregor/" target="_blank" rel="noopener noreferrer">
+            LINKEDIN
+          </a>
+          <a class="menu-link" href="https://github.com/SimianPrimus" target="_blank" rel="noopener noreferrer">
+            GITHUB
+          </a>
+          <a class="menu-link" href="mailto:sarahmcgregor24@gmail.com">
+            EMAIL
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ─── FOOTER ───────────────────────────────────────────── -->
+    <footer class="text-center font-press text-[9px] sm:text-[10px] text-neon-green/70 glow-green mt-10 mb-4 tracking-widest">
+      ★ ・ THANKS FOR PLAYING ・ ★
+    </footer>
+    <div class="text-center font-vt text-neon-pink glow-pink text-base opacity-70">
+      Try the konami code: ▲ ▲ ▼ ▼ ◄ ► ◄ ► B A
     </div>
-  </body>
+
+  </main>
+
+  <script src="retro.js" defer></script>
+</body>
 </html>
