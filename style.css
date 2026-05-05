@@ -93,6 +93,8 @@ a { color: inherit; text-decoration: none; }
   box-shadow:
     inset 6px 0 12px rgba(0,0,0,0.3),
     0 12px 28px rgba(20, 8, 0, 0.35);
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
   z-index: 0;
 }
 
@@ -136,6 +138,8 @@ a { color: inherit; text-decoration: none; }
   bottom: 0;
   right: 0;
   width: 50%;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 /* Hide back-face on front-side content & pseudo textures */
@@ -274,54 +278,104 @@ a { color: inherit; text-decoration: none; }
   padding: 24px 26px 36px;
 }
 
-/* Book navigation (fixed at bottom of viewport) */
+/* Book navigation — leather-and-brass desk plate, bottom-right of viewport */
 .book-nav {
   position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 22px;
+  right: 22px;
   display: flex;
   align-items: center;
-  gap: 28px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  padding: 12px 28px;
+  gap: 18px;
+  background-color: var(--leather);
+  background-image:
+    radial-gradient(ellipse at 30% 20%, rgba(255, 230, 180, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 78% 80%, rgba(0, 0, 0, 0.28) 0%, transparent 65%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='ln'><feTurbulence baseFrequency='0.6' numOctaves='2' seed='6'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.32 0'/></filter><rect width='180' height='180' filter='url(%23ln)'/></svg>");
+  background-blend-mode: normal, normal, multiply;
+  border: 1px solid var(--gilt);
+  padding: 9px 18px;
   z-index: 1000;
-  box-shadow: 0 6px 24px rgba(60, 40, 20, 0.12);
+  box-shadow:
+    0 10px 22px rgba(20, 8, 0, 0.45),
+    0 2px 4px rgba(20, 8, 0, 0.3),
+    inset 0 1px 0 rgba(255, 230, 180, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.35);
 }
 .nav-btn {
   background: transparent;
   border: none;
   font-family: 'Inter';
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--moss);
-  opacity: 0.65;
+  color: var(--gilt-soft);
+  opacity: 0.85;
   cursor: pointer;
   transition: opacity 0.2s ease, color 0.2s ease;
   padding: 4px 0;
 }
 .nav-btn:hover {
   opacity: 1;
-  color: var(--burgundy);
+  color: var(--gilt);
 }
 .nav-btn:disabled {
-  opacity: 0.18;
+  opacity: 0.25;
   cursor: not-allowed;
+}
+.nav-btn:focus-visible {
+  outline: 1.5px solid var(--gilt);
+  outline-offset: 3px;
+  opacity: 1;
 }
 .nav-marker {
   font-family: 'Inter';
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--burgundy);
-  min-width: 90px;
+  color: var(--gilt);
+  min-width: 80px;
   text-align: center;
-  opacity: 0.75;
+  opacity: 0.95;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
+
+/* Per-page next-page arrow (bottom-right of every page) */
+.page-turn {
+  position: absolute;
+  bottom: 14px;
+  right: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter';
+  font-size: 22px;
+  line-height: 1;
+  color: var(--burgundy);
+  padding: 8px 12px;
+  z-index: 4;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  backface-visibility: hidden;
+}
+.page-turn:hover { opacity: 1; transform: translateX(4px); }
+.page-turn:focus-visible {
+  outline: 2px solid var(--burgundy);
+  outline-offset: 4px;
+  opacity: 1;
+}
+[data-page="cover"] .page-turn {
+  position: static;
+  bottom: auto;
+  right: auto;
+  padding: 0 4px;
+  color: var(--gilt);
+  opacity: 0.85;
+  font-size: 24px;
+}
+[data-page="cover"] .page-turn:hover { opacity: 1; }
+[data-page="cover"] .page-turn:focus-visible { outline-color: var(--gilt); }
 
 /* Cover page */
 .cover-mark {
@@ -335,23 +389,6 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   opacity: 0.85;
 }
-.cover-cta {
-  font-family: 'Inter';
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--burgundy);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: gap 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  user-select: none;
-}
-.cover-cta:hover { gap: 18px; }
-.cover-cta .arrow { font-weight: 500; letter-spacing: 0; }
-
 /* Table of contents */
 .toc {
   list-style: none;
@@ -532,7 +569,6 @@ a { color: inherit; text-decoration: none; }
 [data-page="cover"] #typewriter::first-letter { color: var(--gilt); }
 [data-page="cover"] #typewriter.typing::after { color: var(--gilt); }
 [data-page="cover"] .cover-mark { color: var(--gilt); opacity: 0.92; }
-[data-page="cover"] .cover-cta { color: var(--gilt); }
 
 [data-page="cover"] .cover-epigraph {
   font-family: 'Inter';
@@ -1154,9 +1190,9 @@ body.bloomed .pollen .particle {
   .chip { font-size: 13px; padding: 0 10px; }
   .chips-label { font-size: 10px; padding: 0 12px 0 0; }
   [data-page="journal"] .page-inner { inset: 36px 24px; padding: 18px 18px 26px; }
-  .book-nav { padding: 10px 22px; gap: 22px; }
-  .nav-btn { font-size: 10px; }
-  .nav-marker { font-size: 10px; min-width: 80px; }
+  .book-nav { padding: 7px 14px; gap: 14px; bottom: 14px; right: 14px; }
+  .nav-btn { font-size: 9px; }
+  .nav-marker { font-size: 9px; min-width: 70px; }
 }
 
 /* ---------- Universal text-overflow safety ---------- */
@@ -1181,7 +1217,7 @@ body.bloomed .pollen .particle {
 /* ---------- Mobile: drop the notebook concept, stack pages ---------- */
 @media (max-width: 768px) {
   body { font-size: 16px; }
-  .cover-cta { display: none; }       /* no page-flip in scroll view */
+  .page-turn { display: none; }       /* no page-flip in scroll view */
 
   .notebook { perspective: none; height: auto; max-width: 100%; aspect-ratio: auto; margin: 0; }
   .back-cover-board, .spine { display: none; }
@@ -1209,7 +1245,6 @@ body.bloomed .pollen .particle {
 
   [data-page="cover"] .page-inner { padding: 64px 22px 48px; }
   [data-page="cover"] h1 { font-size: 64px; line-height: 0.92; }
-  .cover-cta { font-size: 14px; }
 
   .section-head { gap: 16px; margin-bottom: 32px; padding-bottom: 16px; }
   .section-head .folio { font-size: 20px; }

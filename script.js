@@ -123,15 +123,14 @@
     });
   });
 
-  // Cover CTA
-  const coverCta = $('.cover-cta');
-  if (coverCta) {
-    coverCta.addEventListener('click', () => {
-      const dp = coverCta.dataset.target || 'contents';
-      const idx = pages.findIndex(p => p.dataset.page === dp);
-      navigate(idx >= 0 ? idx : 1);
+  // Per-page next-page arrow
+  $$('.page-turn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const page = btn.closest('.page');
+      const idx = pages.indexOf(page);
+      if (idx >= 0) navigate(idx + 1);
     });
-  }
+  });
 
   // Keyboard navigation
   document.addEventListener('keydown', (e) => {
