@@ -41,38 +41,60 @@
     const dp = p.dataset.page;
     const titles = {
       cover: 'cover',
-      contents: 'i. contents',
-      numbers: 'ii. numbers',
-      toolbox: 'iii. toolbox',
-      journal: 'iv. journal',
-      contact: 'v. contact',
+      introduction: 'i. introduction',
+      contents: 'ii. contents',
+      numbers: 'iii. numbers',
+      toolbox: 'iv. toolbox',
+      journal: 'v. journal',
+      contact: 'vi. contact',
     };
     return titles[dp] || dp;
   });
 
   let current = 0;
 
+  const updateZIndices = () => {
+    pages.forEach((p, i) => {
+      if (p.classList.contains('flipped')) {
+        // verso stack: most-recently-flipped (highest i) on top
+        p.style.zIndex = String(20 + i);
+      } else {
+        // recto stack: next-to-read (lowest unflipped i) on top
+        p.style.zIndex = String(60 - i);
+      }
+    });
+  };
+
+  let zUpdatePending;
   const navigate = (target) => {
     if (isMobile()) {
-      // On mobile, just scroll to the page (no flipping)
       pages[target] && pages[target].scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
     }
     if (target < 0 || target >= pages.length || target === current) return;
 
-    if (target > current) {
+    const goingForward = target > current;
+
+    if (goingForward) {
+      // Forward: keep flipping pages on TOP during animation (don't reshuffle z
+      // immediately, otherwise the next page jumps in front instantly). Defer
+      // the z-index update until the rotation completes.
       for (let i = current; i < target; i++) {
         pages[i].classList.add('flipped');
       }
+      clearTimeout(zUpdatePending);
+      zUpdatePending = setTimeout(updateZIndices, 950);
     } else {
+      // Backward: incoming page should be on top of recto immediately so it
+      // covers what's beneath as it un-flips into place. (This already works.)
       for (let i = target; i < current; i++) {
         pages[i].classList.remove('flipped');
       }
+      updateZIndices();
     }
     current = target;
     updateNav();
 
-    // scroll the active page-inner back to top so users start at the top of new content
     const activeInner = pages[current].querySelector('.page-inner');
     if (activeInner) activeInner.scrollTop = 0;
   };
@@ -126,6 +148,7 @@
     }
   });
 
+  updateZIndices();
   updateNav();
 
   // ---------- Tabs (Journal panels) ----------

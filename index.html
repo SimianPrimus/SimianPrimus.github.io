@@ -35,6 +35,9 @@
 
   <main class="notebook">
 
+    <!-- Static back cover board behind the page stack -->
+    <div class="back-cover-board" aria-hidden="true"></div>
+
     <!-- ============================================================ -->
     <!-- COVER                                                         -->
     <!-- ============================================================ -->
@@ -48,26 +51,48 @@
           <span class="family">McGregor</span>
         </h1>
 
-        <div class="role">
-          <span>Full-stack engineer</span>
-          <span class="sep"></span>
-          <span>Privacy &amp; compliance</span>
-          <span class="sep"></span>
-          <span class="live"><span class="dot"></span>Open to chat</span>
-        </div>
-
         <blockquote class="cover-epigraph">
-          Very few industries shape the world this much with this little regulation. That mismatch is interesting to me.
+          Software shapes the world more than most industries, with less regulation than almost any of them. That gap holds my attention.
         </blockquote>
+
+        <ul class="cover-list">
+          <li>Full-stack engineer</li>
+          <li>Privacy &amp; compliance</li>
+        </ul>
+
+        <div class="cover-bottom">
+          <div class="cover-status">
+            <span class="dot"></span>
+            <span>Open to chat</span>
+          </div>
+          <div class="cover-cta" data-target="introduction">
+            <span>turn the page</span>
+            <span class="arrow">&rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-back" aria-hidden="true"></div>
+    </article>
+
+    <!-- ============================================================ -->
+    <!-- INTRODUCTION                                                  -->
+    <!-- ============================================================ -->
+    <article class="page" data-page="introduction">
+      <div class="page-inner">
+        <header class="section-head">
+          <span class="folio">i.</span>
+          <div><h2>Introduction</h2></div>
+        </header>
 
         <p id="typewriter"
            data-text="Full-stack engineer, two years in at Dxtra (my first dev job). I'm here for the problem-solving and getting to the bottom of thorny issues. The work got me into privacy specifically, and into the ethics of building software more broadly. Day to day: embeddable consent platforms, AI document pipelines, and the React admin behind them. Mostly TypeScript, plus Python, Java, SQL and GraphQL.">Full-stack engineer, two years in at Dxtra (my first dev job). I'm here for the problem-solving and getting to the bottom of thorny issues. The work got me into privacy specifically, and into the ethics of building software more broadly. Day to day: embeddable consent platforms, AI document pipelines, and the React admin behind them. Mostly TypeScript, plus Python, Java, SQL and GraphQL.</p>
 
-        <div class="cover-cta" data-target="contents">
-          <span>turn the page</span>
-          <span class="arrow">&rarr;</span>
-        </div>
+        <p class="intro-transfer">
+          Privacy is where I happen to work, but the patterns travel. Multi-tenant systems, stateful UIs across the auth boundary, regulated-data migrations, multi-agent AI orchestration — these all show up in healthcare, fintech, insurance, and most B2B SaaS. The domain is sticky; the engineering is portable.
+        </p>
       </div>
+      <div class="page-foot" aria-hidden="true">Sarah McGregor &middot; MMXXVI</div>
+      <div class="page-back" aria-hidden="true"></div>
     </article>
 
     <!-- ============================================================ -->
@@ -76,41 +101,50 @@
     <article class="page" data-page="contents">
       <div class="page-inner">
         <header class="section-head">
-          <span class="folio">i.</span>
+          <span class="folio">ii.</span>
           <div><h2>Contents</h2></div>
         </header>
 
         <ol class="toc">
           <li>
+            <a class="toc-entry" data-target="introduction">
+              <span class="toc-title">Introduction</span>
+              <span class="toc-dots"></span>
+              <span class="toc-folio">i</span>
+            </a>
+          </li>
+          <li>
             <a class="toc-entry" data-target="numbers">
               <span class="toc-title">By the numbers</span>
               <span class="toc-dots"></span>
-              <span class="toc-folio">ii</span>
+              <span class="toc-folio">iii</span>
             </a>
           </li>
           <li>
             <a class="toc-entry" data-target="toolbox">
               <span class="toc-title">Toolbox</span>
               <span class="toc-dots"></span>
-              <span class="toc-folio">iii</span>
+              <span class="toc-folio">iv</span>
             </a>
           </li>
           <li>
             <a class="toc-entry" data-target="journal">
               <span class="toc-title">Journal</span>
               <span class="toc-dots"></span>
-              <span class="toc-folio">iv</span>
+              <span class="toc-folio">v</span>
             </a>
           </li>
           <li>
             <a class="toc-entry" data-target="contact">
               <span class="toc-title">Get in touch</span>
               <span class="toc-dots"></span>
-              <span class="toc-folio">v</span>
+              <span class="toc-folio">vi</span>
             </a>
           </li>
         </ol>
       </div>
+      <div class="page-foot" aria-hidden="true">Sarah McGregor &middot; MMXXVI</div>
+      <div class="page-back" aria-hidden="true"></div>
     </article>
 
     <!-- ============================================================ -->
@@ -119,7 +153,7 @@
     <article class="page" data-page="numbers">
       <div class="page-inner">
         <header class="section-head">
-          <span class="folio">ii.</span>
+          <span class="folio">iii.</span>
           <div>
             <p class="kicker">Growth so far</p>
             <h2>By the numbers</h2>
@@ -161,6 +195,8 @@
           <span class="chip">Bash</span>
         </div>
       </div>
+      <div class="page-foot" aria-hidden="true">Sarah McGregor &middot; MMXXVI</div>
+      <div class="page-back" aria-hidden="true"></div>
     </article>
 
     <!-- ============================================================ -->
@@ -169,7 +205,7 @@
     <article class="page" data-page="toolbox">
       <div class="page-inner">
         <header class="section-head">
-          <span class="folio">iii.</span>
+          <span class="folio">iv.</span>
           <div>
             <p class="kicker">What I work in</p>
             <h2>Toolbox</h2>
@@ -231,6 +267,8 @@
           </div>
         </div>
       </div>
+      <div class="page-foot" aria-hidden="true">Sarah McGregor &middot; MMXXVI</div>
+      <div class="page-back" aria-hidden="true"></div>
     </article>
 
     <!-- ============================================================ -->
@@ -239,7 +277,7 @@
     <article class="page" data-page="journal">
       <div class="page-inner">
         <header class="section-head">
-          <span class="folio">iv.</span>
+          <span class="folio">v.</span>
           <div>
             <p class="kicker">Work in motion</p>
             <h2>Journal</h2>
@@ -363,18 +401,20 @@
           </article>
 
           <article class="entry">
-            <h3>To be added</h3>
-            <div class="subtitle">slot reserved</div>
-            <p style="font-style: italic; opacity: 0.7;">Tell me what you're picking up next.</p>
+            <h3>Multi-region distributed systems</h3>
+            <div class="subtitle">cross-DC state, eventual consistency, datacenter-aware routing</div>
+            <p>Most of what I've shipped runs single-region. Stretching into the cross-datacenter side now: state that has to converge across regions, eventual-consistency tradeoffs, datacenter-aware routing. Near-term focus: a substantive multi-region rebuild that's top of my queue.</p>
           </article>
 
           <article class="entry">
-            <h3>To be added</h3>
-            <div class="subtitle">slot reserved</div>
-            <p style="font-style: italic; opacity: 0.7;">Tell me what you're picking up next.</p>
+            <h3>Browser extension development</h3>
+            <div class="subtitle">manifest v3, content scripts, declarative permissions</div>
+            <p>Different runtime conventions to web — content scripts vs background workers, declarative permissions, manifest v3 quirks. Near-term project: a Global Privacy Control extension that tells participating sites to opt the user out of tracking.</p>
           </article>
         </div>
       </div>
+      <div class="page-foot" aria-hidden="true">Sarah McGregor &middot; MMXXVI</div>
+      <div class="page-back" aria-hidden="true"></div>
     </article>
 
     <!-- ============================================================ -->
@@ -383,7 +423,7 @@
     <article class="page" data-page="contact">
       <div class="page-inner">
         <header class="section-head">
-          <span class="folio">v.</span>
+          <span class="folio">vi.</span>
           <div>
             <p class="kicker">The journey continues</p>
             <h2>Get in touch</h2>
@@ -412,14 +452,13 @@
           </a>
         </div>
 
-        <div class="ornament-rule colophon" aria-hidden="true">
-          <span class="rule"></span>
-          <span class="glyph">&#10086;</span>
-          <span class="rule"></span>
-        </div>
-        <p class="copy">Sarah McGregor &middot; MMXXVI</p>
       </div>
+      <div class="page-foot" aria-hidden="true">Sarah McGregor &middot; MMXXVI</div>
+      <div class="page-back" aria-hidden="true"></div>
     </article>
+
+    <!-- Spine accent at the centre of the open book -->
+    <div class="spine" aria-hidden="true"></div>
 
   </main>
 
