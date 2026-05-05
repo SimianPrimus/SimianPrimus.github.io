@@ -3,471 +3,434 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sarah McGregor's personal portfolio. Full-stack engineer, currently working on privacy and compliance. Retro arcade theme." />
-  <title>SARAH MCGREGOR // FULL-STACK ENGINEER</title>
+  <meta name="description" content="Sarah McGregor's personal portfolio. Full-stack engineer, currently working on privacy and compliance." />
+  <title>Sarah McGregor · Full-Stack Engineer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            neon: {
-              green:  '#00ff00',
-              pink:   '#ff00ff',
-              cyan:   '#00ffff',
-              red:    '#ff0000',
-              amber:  '#ffb000',
-              yellow: '#ffff00',
-            },
-          },
-          fontFamily: {
-            press: ['"Press Start 2P"', 'monospace'],
-            vt:    ['"VT323"', 'monospace'],
-          },
-        },
-      },
-    };
-  </script>
-
-  <link rel="stylesheet" href="retro.css">
+  <link rel="stylesheet" href="style.css">
 
   <noscript>
     <style>
-      #press-start { display: none !important; }
-      #main { opacity: 1 !important; }
+      .notebook { perspective: none; height: auto !important; }
+      .page { position: relative !important; transform: none !important; height: auto !important; box-shadow: none !important; max-height: none !important; border-bottom: 1px solid rgba(26,32,24,0.18); }
+      .page-inner { height: auto !important; overflow: visible !important; }
+      .book-nav { display: none !important; }
       .reveal { opacity: 1 !important; transform: none !important; }
-      .bar > span { width: 100% !important; }
+      #typewriter::after { display: none; }
+      .panel.hidden { display: block !important; }
     </style>
   </noscript>
 </head>
-<body class="bg-black text-neon-green">
 
-  <!-- ============================================================ -->
-  <!-- PRESS START SCREEN                                            -->
-  <!-- ============================================================ -->
-  <div id="press-start" class="press-start-screen" role="button" tabindex="0" aria-label="Press space or click to start">
-    <div class="font-press text-neon-green text-2xl sm:text-4xl md:text-5xl pulse-glow mb-4">SARAH MCGREGOR</div>
-    <div class="font-press text-neon-cyan glow-cyan text-xs sm:text-base mb-12 tracking-widest">★ FULL-STACK ENGINEER ★</div>
-    <div class="font-press text-neon-pink glow-pink text-xs sm:text-sm blink mb-8">PRESS [ SPACE ] TO START</div>
-    <div class="font-vt text-neon-amber text-base sm:text-lg opacity-80">© 2024–<span id="year">2026</span> ・ PLAYER 1 EDITION ・ V2.0</div>
-    <div class="font-vt text-neon-green text-sm opacity-50 mt-4">▲ ▲ ▼ ▼ ◄ ► ◄ ► B A</div>
+<body>
+
+  <!-- Konami easter-egg banner (hidden) -->
+  <div id="bloom-banner" class="bloom-banner" aria-hidden="true">
+    <em>full bloom</em>
+    <small>achievement unlocked</small>
   </div>
 
-  <!-- ============================================================ -->
-  <!-- KONAMI UNLOCK BANNER                                          -->
-  <!-- ============================================================ -->
-  <div id="unlock-banner" class="unlock-banner" aria-hidden="true">
-    ★ ACHIEVEMENT UNLOCKED ★<br/>
-    <span class="text-neon-cyan glow-cyan text-sm block mt-3">DEVELOPER MODE</span>
-  </div>
+  <main class="notebook">
 
-  <!-- ============================================================ -->
-  <!-- HUD                                                            -->
-  <!-- ============================================================ -->
-  <div class="hud">
-    <div class="row">PLAYER 1<span class="blink ml-2 text-neon-green">●</span></div>
-    <div class="row">SCORE <span id="coin-count">0000</span></div>
-  </div>
-  <div class="hud-right">
-    <div>WORLD 1-1</div>
-    <div class="text-neon-pink glow-pink">@SIMIANPRIMUS</div>
-  </div>
+    <!-- ============================================================ -->
+    <!-- COVER                                                         -->
+    <!-- ============================================================ -->
+    <article class="page" data-page="cover">
+      <span class="cover-frame" aria-hidden="true"></span>
+      <div class="page-inner">
+        <div class="cover-mark">Anno MMXXVI &nbsp;·&nbsp; Vol. I</div>
 
-  <!-- ============================================================ -->
-  <!-- MAIN                                                           -->
-  <!-- ============================================================ -->
-  <main id="main" class="opacity-0 transition-opacity duration-700 max-w-5xl mx-auto px-4 sm:px-6 md:px-10 py-16 sm:py-24">
+        <h1>
+          <span class="given">Sarah</span>
+          <span class="family">McGregor</span>
+        </h1>
 
-    <!-- ─── HERO / PLAYER PROFILE ───────────────────────────── -->
-    <section class="reveal mb-16">
-      <div class="retro-frame p-6 sm:p-10 md:p-14">
-        <div class="flex items-start justify-between flex-wrap gap-4 mb-6">
-          <div class="font-press text-[10px] sm:text-xs text-neon-amber glow-amber tracking-widest">▶ PLAYER PROFILE</div>
-          <div class="font-press text-[10px] sm:text-xs text-neon-cyan glow-cyan">LV.24</div>
+        <div class="role">
+          <span>Full-stack engineer</span>
+          <span class="sep"></span>
+          <span>Privacy &amp; compliance</span>
+          <span class="sep"></span>
+          <span class="live"><span class="dot"></span>Open to chat</span>
         </div>
 
-        <div class="flex items-center gap-6 sm:gap-10 flex-wrap">
-          <!-- Pixel sprite, inline SVG. 16x16 cells, scaled up. -->
-          <svg class="sprite sprite-bob shrink-0" width="96" height="96" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
-            <!-- hat -->
-            <rect x="4" y="1" width="8" height="1" fill="#ff00ff"/>
-            <rect x="3" y="2" width="10" height="2" fill="#ff00ff"/>
-            <!-- face -->
-            <rect x="4" y="4" width="8" height="4" fill="#00ffff"/>
-            <rect x="6" y="5" width="1" height="1" fill="#000"/>
-            <rect x="9" y="5" width="1" height="1" fill="#000"/>
-            <rect x="6" y="7" width="4" height="1" fill="#000"/>
-            <!-- body -->
-            <rect x="3" y="8" width="10" height="4" fill="#00ff00"/>
-            <rect x="7" y="9" width="2" height="2" fill="#ffb000"/>
-            <!-- legs -->
-            <rect x="4" y="12" width="3" height="3" fill="#ff00ff"/>
-            <rect x="9" y="12" width="3" height="3" fill="#ff00ff"/>
-            <rect x="3" y="15" width="4" height="1" fill="#000"/>
-            <rect x="9" y="15" width="4" height="1" fill="#000"/>
-          </svg>
-
-          <div class="flex-1 min-w-[260px]">
-            <h1 class="player-name font-press text-2xl sm:text-3xl md:text-4xl text-neon-green glow-green leading-tight mb-3">
-              SARAH<br/>MCGREGOR
-            </h1>
-            <div class="font-press text-[10px] sm:text-xs text-neon-pink glow-pink tracking-widest mb-1">
-              CLASS ▸ FULL-STACK ENGINEER
-            </div>
-            <div class="font-press text-[10px] sm:text-xs text-neon-cyan glow-cyan tracking-widest mb-1">
-              SPEC ▸ PRIVACY &amp; COMPLIANCE
-            </div>
-            <div class="font-press text-[10px] sm:text-xs text-neon-amber glow-amber tracking-widest mb-1">
-              GAMERTAG ▸ @SimianPrimus
-            </div>
-            <div class="font-press text-[10px] sm:text-xs text-neon-green glow-green tracking-widest">
-              STATUS ▸ OPEN TO CHAT <span class="blink">●</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="divider">▼ BIO ▼</div>
+        <blockquote class="cover-epigraph">
+          Very few industries shape the world this much with this little regulation. That mismatch is interesting to me.
+        </blockquote>
 
         <p id="typewriter"
-           data-text="Full-stack engineer, two years in at Dxtra (my first dev job). I'm here for the problem-solving and getting to the bottom of thorny issues. The work got me into privacy specifically, and into the ethics of building software in general: very few industries shape the world this much with this little regulation, and that mismatch is interesting to me. Day to day: embeddable consent platforms, AI document pipelines, and the React admin behind them. Mostly TypeScript, plus Python, Java, SQL and GraphQL."
-           class="font-vt text-lg sm:text-xl text-neon-green leading-relaxed">Full-stack engineer, two years in at Dxtra (my first dev job). I'm here for the problem-solving and getting to the bottom of thorny issues. The work got me into privacy specifically, and into the ethics of building software in general: very few industries shape the world this much with this little regulation, and that mismatch is interesting to me. Day to day: embeddable consent platforms, AI document pipelines, and the React admin behind them. Mostly TypeScript, plus Python, Java, SQL and GraphQL.</p>
-      </div>
-    </section>
+           data-text="Full-stack engineer, two years in at Dxtra (my first dev job). I'm here for the problem-solving and getting to the bottom of thorny issues. The work got me into privacy specifically, and into the ethics of building software more broadly. Day to day: embeddable consent platforms, AI document pipelines, and the React admin behind them. Mostly TypeScript, plus Python, Java, SQL and GraphQL.">Full-stack engineer, two years in at Dxtra (my first dev job). I'm here for the problem-solving and getting to the bottom of thorny issues. The work got me into privacy specifically, and into the ethics of building software more broadly. Day to day: embeddable consent platforms, AI document pipelines, and the React admin behind them. Mostly TypeScript, plus Python, Java, SQL and GraphQL.</p>
 
-    <!-- ─── CHARACTER STATS ──────────────────────────────────── -->
-    <section class="reveal mb-16">
-      <h2 class="section-heading text-base sm:text-xl mb-6">▶ CHARACTER STATS</h2>
-
-      <div class="retro-frame green p-6 sm:p-8">
-        <div class="space-y-5">
-          <div>
-            <div class="flex justify-between font-press text-[10px] sm:text-xs mb-2">
-              <span class="text-neon-green">HP ・ COMMITS</span>
-              <span class="text-neon-amber glow-amber">4,850</span>
-            </div>
-            <div class="bar reveal"><span></span></div>
-          </div>
-
-          <div>
-            <div class="flex justify-between font-press text-[10px] sm:text-xs mb-2">
-              <span class="text-neon-pink">MP ・ REPOS CLEARED</span>
-              <span class="text-neon-amber glow-amber">11</span>
-            </div>
-            <div class="bar pink reveal"><span></span></div>
-          </div>
-
-          <div>
-            <div class="flex justify-between font-press text-[10px] sm:text-xs mb-2">
-              <span class="text-neon-cyan">EXP ・ HASURA MIGRATIONS</span>
-              <span class="text-neon-amber glow-amber">~1,900</span>
-            </div>
-            <div class="bar cyan reveal"><span></span></div>
-          </div>
-
-          <div>
-            <div class="flex justify-between font-press text-[10px] sm:text-xs mb-2">
-              <span class="text-neon-amber">i18n ・ LOCALES SHIPPED</span>
-              <span class="text-neon-amber glow-amber">11 ⊕ 19</span>
-            </div>
-            <div class="bar amber reveal"><span></span></div>
-          </div>
-        </div>
-
-        <div class="divider">▼ LANGUAGES SPOKEN ▼</div>
-
-        <div class="flex flex-wrap gap-2 sm:gap-3">
-          <span class="item">TS</span>
-          <span class="item cyan">JS</span>
-          <span class="item pink">PY</span>
-          <span class="item amber">JAVA</span>
-          <span class="item">SQL</span>
-          <span class="item cyan">BASH</span>
-          <span class="item pink">GRAPHQL</span>
-        </div>
-
-        <!-- Hidden until Konami -->
-        <div id="secret-stats" class="hidden mt-8 p-4 border-2 border-neon-yellow font-vt text-neon-yellow glow-amber text-base">
-          <div class="font-press text-xs mb-3">★ DEBUG STATS UNLOCKED ★</div>
-          <ul class="list-none space-y-1">
-            <li>▸ AI providers wired: Claude (Sonnet 3.5 → 4.6), GPT-4</li>
-            <li>▸ Webhook integrations shipped: 20+</li>
-            <li>▸ ECS Fargate constructs in CDK: 15+</li>
-            <li>▸ Custom React hooks authored: 120+</li>
-            <li>▸ Active dev career: May 2024 → present (Year 2)</li>
-          </ul>
+        <div class="cover-cta" data-target="contents">
+          <span>turn the page</span>
+          <span class="arrow">&rarr;</span>
         </div>
       </div>
-    </section>
+    </article>
 
-    <!-- ─── INVENTORY (TECH STACK) ───────────────────────────── -->
-    <section class="reveal mb-16">
-      <h2 class="section-heading text-base sm:text-xl mb-6">▶ INVENTORY ・ TECH STACK</h2>
+    <!-- ============================================================ -->
+    <!-- CONTENTS                                                      -->
+    <!-- ============================================================ -->
+    <article class="page" data-page="contents">
+      <div class="page-inner">
+        <header class="section-head">
+          <span class="folio">i.</span>
+          <div><h2>Contents</h2></div>
+        </header>
 
-      <div class="retro-frame p-6 sm:p-8">
-        <div class="font-press text-[10px] text-neon-pink glow-pink mb-4 tracking-widest">┃ FRONTEND ┃</div>
-        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 mb-6">
-          <div class="item">REACT 18<span class="tip">SPA work on the admin and the embeddable widget; 100+ reusable components.</span></div>
-          <div class="item">NEXT.JS<span class="tip">Pages router on the marketing site, App router on a commerce demo. Turbopack, SSR, hydration fixes.</span></div>
-          <div class="item">TYPESCRIPT<span class="tip">5.x strict everywhere. Zod at every boundary.</span></div>
-          <div class="item">VITE 7<span class="tip">Custom plugins, including one that pins a stable widget entry filename across hashed builds.</span></div>
-          <div class="item">MUI v7<span class="tip">Theming &amp; component overrides for the admin SPA.</span></div>
-          <div class="item">TAILWIND<span class="tip">Tailwind 3 (platform), Tailwind 4 (marketing site), shadow-DOM-scoped utilities.</span></div>
-          <div class="item">ATOMICO<span class="tip">Web Components / Custom Elements for an embeddable shadow-DOM widget.</span></div>
-          <div class="item">TANSTACK<span class="tip">Router + Form + Zod for the onboarding wizard.</span></div>
-          <div class="item">APOLLO<span class="tip">Cache invalidation discipline across dual GraphQL endpoints.</span></div>
-          <div class="item">XSTATE 4<span class="tip">State machines for consent / rights workflows.</span></div>
-          <div class="item">i18n<span class="tip">typesafe-i18n with build-time type generation, lazy locale chunks, BCP 47.</span></div>
-          <div class="item">PLAYWRIGHT<span class="tip">E2E in CI; Vitest for unit.</span></div>
+        <ol class="toc">
+          <li>
+            <a class="toc-entry" data-target="numbers">
+              <span class="toc-title">By the numbers</span>
+              <span class="toc-dots"></span>
+              <span class="toc-folio">ii</span>
+            </a>
+          </li>
+          <li>
+            <a class="toc-entry" data-target="toolbox">
+              <span class="toc-title">Toolbox</span>
+              <span class="toc-dots"></span>
+              <span class="toc-folio">iii</span>
+            </a>
+          </li>
+          <li>
+            <a class="toc-entry" data-target="journal">
+              <span class="toc-title">Journal</span>
+              <span class="toc-dots"></span>
+              <span class="toc-folio">iv</span>
+            </a>
+          </li>
+          <li>
+            <a class="toc-entry" data-target="contact">
+              <span class="toc-title">Get in touch</span>
+              <span class="toc-dots"></span>
+              <span class="toc-folio">v</span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </article>
+
+    <!-- ============================================================ -->
+    <!-- BY THE NUMBERS                                                -->
+    <!-- ============================================================ -->
+    <article class="page" data-page="numbers">
+      <div class="page-inner">
+        <header class="section-head">
+          <span class="folio">ii.</span>
+          <div>
+            <p class="kicker">Growth so far</p>
+            <h2>By the numbers</h2>
+          </div>
+          <div class="aside">may 2024<br>to present</div>
+        </header>
+
+        <div class="numbers-grid">
+          <div class="stat">
+            <div class="stat-label">Commits</div>
+            <div class="stat-value">4,850</div>
+            <p class="stat-note">across the platform, over 24 months.</p>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Hasura migrations</div>
+            <div class="stat-value">~1,900</div>
+            <p class="stat-note">authored on a regulated-data schema, additive-only.</p>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Locales shipped</div>
+            <div class="stat-value">11 + 19</div>
+            <p class="stat-note">on the platform and the marketing site respectively.</p>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Peak month</div>
+            <div class="stat-value">242</div>
+            <p class="stat-note">commits in November 2025, during a heavy build push.</p>
+          </div>
         </div>
 
-        <div class="font-press text-[10px] text-neon-cyan glow-cyan mb-4 tracking-widest">┃ BACKEND ┃</div>
-        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 mb-6">
-          <div class="item cyan">NODE 22<span class="tip">TypeScript, Express 4, Vitest + Testcontainers.</span></div>
-          <div class="item cyan">FASTAPI<span class="tip">Small Python service for deterministic ID generation with SHA3-256.</span></div>
-          <div class="item cyan">MICRONAUT<span class="tip">Java 17→21 edge for the tag manager.</span></div>
-          <div class="item cyan">LANGCHAIN<span class="tip">LangChain + LangGraph. Supervisor agent coordinating generation, translation, and audit specialists with Postgres checkpointing for long runs.</span></div>
-          <div class="item cyan">STRIPE<span class="tip">Checkout, billing portal, 4-attempt cancellation flow.</span></div>
-          <div class="item cyan">OAUTH2<span class="tip">Production OAuth flows for seven SaaS platforms across project management, accounting, ad networks, and survey tooling.</span></div>
-        </div>
-
-        <div class="font-press text-[10px] text-neon-amber glow-amber mb-4 tracking-widest">┃ DATA &amp; MESSAGING ┃</div>
-        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 mb-6">
-          <div class="item amber">POSTGRES 17<span class="tip">~1,900 Hasura migrations across the privacy schema.</span></div>
-          <div class="item amber">HASURA<span class="tip">GraphQL with role-based metadata permissions across 4 roles.</span></div>
-          <div class="item amber">MONGODB 6<span class="tip">Replica set, keyfile auth.</span></div>
-          <div class="item amber">CLICKHOUSE<span class="tip">Cluster with S3 storage, column-oriented analytics ingest.</span></div>
-          <div class="item amber">REDIS 7<span class="tip">3-node Redlock cluster with circuit breaker. Did the cluster sizing analysis for production capacity.</span></div>
-          <div class="item amber">RABBITMQ 4<span class="tip">Outbound dispatcher fan-out, async PII event publishing.</span></div>
-        </div>
-
-        <div class="font-press text-[10px] text-neon-pink glow-pink mb-4 tracking-widest">┃ INFRA &amp; AI ┃</div>
-        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3">
-          <div class="item pink">AWS CDK v2<span class="tip">Contributing to a production CDK platform across two regions. DNS migrations, email-auth wiring, CloudFront work.</span></div>
-          <div class="item pink">CLOUDFRONT<span class="tip">L2 refactor and dynamic CORS for cross-origin widget embedding.</span></div>
-          <div class="item pink">REDLOCK<span class="tip">Redis 3-node Redlock with circuit breaker. Did the cluster sizing analysis for production capacity.</span></div>
-          <div class="item pink">DOCKER<span class="tip">Wrote a ~58KB local-env orchestrator covering 60+ services with health checks and secrets management.</span></div>
-          <div class="item pink">CLAUDE<span class="tip">Anthropic Sonnet 3.5 → 4.6 with extended thinking.</span></div>
-          <div class="item pink">GPT-4<span class="tip">OpenAI dual-provider fallback alongside Claude.</span></div>
+        <div class="chips">
+          <span class="chips-label">Languages</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Python</span>
+          <span class="chip">Java</span>
+          <span class="chip">SQL</span>
+          <span class="chip">GraphQL</span>
+          <span class="chip">Bash</span>
         </div>
       </div>
-    </section>
+    </article>
 
-    <!-- ─── QUEST LOG (TABBED) ───────────────────────────────── -->
-    <section class="reveal mb-16">
-      <h2 class="section-heading text-base sm:text-xl mb-6">▶ QUEST LOG</h2>
-
-      <div class="retro-frame green p-6 sm:p-8">
-
-        <!-- Tabs -->
-        <div class="flex flex-wrap gap-2 sm:gap-3 mb-6 pb-5 border-b-2 border-neon-green/25" role="tablist">
-          <button data-tab="completed" class="tab active" role="tab">★ ACHIEVEMENTS</button>
-          <button data-tab="active"    class="tab pink"  role="tab">▶ IN PROGRESS</button>
-          <button data-tab="training"  class="tab cyan"  role="tab">▲ TRAINING</button>
-        </div>
-
-        <!-- ─── ACHIEVEMENTS ─── -->
-        <div data-panel="completed" class="panel">
-          <p class="font-vt text-base text-neon-green/70 mb-5">▸ Quests cleared. Loot acquired.</p>
-
-          <div class="quest">
-            <div class="font-press text-xs text-neon-green glow-green mb-2">★ CONSENT MANAGEMENT PLATFORM</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">embeddable consent widget ・ 757 commits</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Built a Consent Management Platform from scratch. Hardest part: most consents come from anonymous visitors on first contact, but they need to persist so that when the user later signs in, every preference is still there waiting for them to take control of. Ships in 12 locales as a single Shadow-DOM-isolated bundle that drops into any host site. Atomico Web Components, Apollo, XState. The same anonymous-to-authenticated state pattern applies any time you need pre-login product state to survive sign-up. November 2025 was a <span class="text-neon-amber">242-commit month</span>.
-            </p>
+    <!-- ============================================================ -->
+    <!-- TOOLBOX                                                       -->
+    <!-- ============================================================ -->
+    <article class="page" data-page="toolbox">
+      <div class="page-inner">
+        <header class="section-head">
+          <span class="folio">iii.</span>
+          <div>
+            <p class="kicker">What I work in</p>
+            <h2>Toolbox</h2>
           </div>
+          <div class="aside">four<br>categories</div>
+        </header>
 
-          <div class="quest cyan">
-            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">★ PRIVACY CENTRE ・ DUAL-MODE</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">hosted SPA + embed bundle</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              This one is mostly mine. Built the user-facing privacy dashboard where data subjects review what's held about them, change their preferences, and submit rights requests (export, deletion, correction). Same codebase ships two ways: as a hosted SPA at a stable domain for direct customer link-outs, and as Web Components packaged into the embeddable bundle so customers can drop the same UI inside their own sites with shadow-DOM style isolation. The build-once-deploy-twice pattern is reusable any time a UI needs to live both as your own product surface and as a library someone else embeds inside theirs.
-            </p>
-          </div>
-
-          <div class="quest pink">
-            <div class="font-press text-xs text-neon-pink glow-pink mb-2">★ WEBHOOK HUB</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">API gateway / event hub ・ 971 commits</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              A 20+ integration webhook hub. Timing-safe HMAC, distributed Redlock idempotency, OAuth2 with seven SaaS platforms, Zod schemas at every boundary. The pattern is one consistent receive-validate-deduplicate path across vendors that all sign requests differently and each have their own idea of what a "retry" means. It applies any time you need a single trustworthy ingest layer that keeps the rest of the stack ignorant of vendor quirks.
-            </p>
-          </div>
-
-          <div class="quest">
-            <div class="font-press text-xs text-neon-green glow-green mb-2">★ AI ASSISTANTS ・ SHARED INFRASTRUCTURE</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">multi-turn ・ multi-modal ・ tier-aware</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Built and maintain a shared chat infrastructure that powers multiple distinct AI assistants across the product. The fun part isn't the chat itself, it's everything around it: multi-turn session state, per-user and per-plan rate limiting plus monthly quota enforcement, model upgrade migrations (Sonnet 3.5 → 4.6 with extended thinking, which means re-tuning prompts and behaviour around the new defaults), multimodal input (image URLs decoded to base64 for the model), and graceful degradation when upstream model APIs misbehave. Each assistant has its own system prompt, tool surface, and context-injection logic, but they all share the same conversation engine. Reusable any time a product wants to ship more than one conversational surface without ending up with N copies of the same plumbing.
-            </p>
-          </div>
-
-          <div class="quest pink">
-            <div class="font-press text-xs text-neon-pink glow-pink mb-2">★ MULTI-AGENT AI ORCHESTRATION</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">supervisor + specialists ・ LangGraph</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              A LangGraph multi-agent system that generates, translates, and audits regulated long-form documents. The supervisor coordinates three specialists: a generation agent that assembles jurisdiction-specific output from a structured knowledge base, a translation agent that handles each target locale while preserving placeholders and identifiers, and an audit agent that walks the output for hallucinated terminology, missing required sections, and regulatory drift. Postgres-checkpointed state so multi-hour runs survive restarts and can be inspected mid-flight. Supervisor + specialist agents + checkpointed state is the standard agentic shape. Reusable wherever long-form structured generation needs to be traceable: legal, healthcare, accountancy, regulated marketing copy.
-            </p>
-          </div>
-
-          <div class="quest cyan">
-            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">★ REACT ADMIN ・ BOSS BATTLE</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">React admin SPA ・ 1,336 commits</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Multi-step onboarding flows with partial saves, complex domain editors, regulatory dashboards, integration management for 15+ third-party platforms, embedded AI assistants, request-routing workflows, MFA and cross-domain auth sync. 100+ reusable components and 120+ custom hooks (averaging around 90 LOC). Most of these patterns transfer cleanly to any data-heavy admin SPA.
-            </p>
-          </div>
-
-          <div class="quest amber">
-            <div class="font-press text-xs text-neon-amber glow-amber mb-2">★ SCHEMA-AS-CODE ・ HASURA</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">~1,900 migrations on a regulated-data schema</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Around 1,900 Hasura migrations across a complex regulated-data schema. For reference data the rule is strictly additive: add row, reassign refs, orphan, only delete after prod confirms. Live state never breaks on a single deploy that way. Role-based metadata permissions across four trust tiers. Same discipline applies any time regulated data has to migrate without breaking live records, which is most healthcare / fintech / privacy-adjacent systems.
-            </p>
-          </div>
-
-          <div class="quest">
-            <div class="font-press text-xs text-neon-green glow-green mb-2">★ i18N AT SCALE</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">11 platform locales ・ 19 marketing locales</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Did the typesafe-i18n migration across three production apps and a public marketing site. Wrote a US→UK content-transformation pipeline that walks an en_US tree and emits en_GB JSON with regulatory-term swaps, keeping placeholders and identifiers intact. AI document generation is locale-aware too, with sanctions-aware locale gating. Hit and fixed the usual i18n traps along the way: BCP 47 hyphen vs underscore, Next.js SSR hydration mismatch, lazy locale chunking. The setup transfers to any product that has to vary regulatory or legal content across markets.
-            </p>
-          </div>
-
-          <div class="quest pink">
-            <div class="font-press text-xs text-neon-pink glow-pink mb-2">★ DEVELOPER EXPERIENCE TOOLING</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">multi-repo orchestrators</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Wrote the multi-repo orchestrators the platform team runs day to day. A <span class="text-neon-amber">27KB</span> branch-sync and bulk-ops tool covering 30+ repos. A cross-repo regression harness that combines four separate test suites into one verifiable green / red signal. A <span class="text-neon-amber">~58KB</span> local-env orchestrator that handles container-registry auth, secrets management, health checks, and 60+ services. Useful anywhere a small team is coordinating work across many repos without buying into a heavyweight monorepo.
-            </p>
-          </div>
-
-          <div class="quest cyan">
-            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">★ TAG MANAGER EDGE</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">Java edge service ・ 282 commits</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              A Java/Micronaut edge service for high-throughput tag delivery (Micronaut 2.5→4.8, Java 17→21 upgrade). Prometheus metrics, MaxMind GeoLite2 geo-location, async PII event publishing through a message queue, Google Consent Mode v2 BASIC↔ADVANCED transitions. Geo-aware, async-publish, low-latency: reusable shape for any consent or analytics gateway sitting in front of a downstream pipeline.
-            </p>
-          </div>
-
-          <div class="quest amber">
-            <div class="font-press text-xs text-neon-amber glow-amber mb-2">★ AI-SEARCH OPTIMISATION</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">marketing site ・ 76 commits</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Dynamic Next.js sitemap, schema.org JSON-LD on 19 page templates, an <span class="text-neon-amber glow-amber">llms.txt</span> for AI crawlers (ChatGPT Search, Perplexity, Claude), production CSP/HSTS headers, and a 308 redirect map so old URLs keep their SEO. Standard kit for any 2026-era marketing site that wants to be findable in both classic search and AI-driven discovery.
-            </p>
+        <div class="tool-group">
+          <h3>Frontend</h3>
+          <div class="tools">
+            <div class="tool">React 18<span class="tip">SPA work on the admin and the embeddable widget; 100+ reusable components.</span></div>
+            <div class="tool">Next.js<span class="tip">Pages router on the marketing site, App router on a commerce demo. Turbopack, SSR, hydration fixes.</span></div>
+            <div class="tool">TypeScript<span class="tip">5.x strict everywhere. Zod at every boundary.</span></div>
+            <div class="tool">Vite 7<span class="tip">Custom plugins, including one that pins a stable widget entry filename across hashed builds.</span></div>
+            <div class="tool">MUI v7<span class="tip">Theming and component overrides for the admin SPA.</span></div>
+            <div class="tool">Tailwind<span class="tip">Tailwind 3 (platform), Tailwind 4 (marketing site), shadow-DOM-scoped utilities.</span></div>
+            <div class="tool">Atomico<span class="tip">Web Components / Custom Elements for an embeddable shadow-DOM widget.</span></div>
+            <div class="tool">TanStack<span class="tip">Router + Form + Zod for complex multi-step flows.</span></div>
+            <div class="tool">Apollo<span class="tip">Cache invalidation discipline across dual GraphQL endpoints.</span></div>
+            <div class="tool">XState 4<span class="tip">State machines for consent and rights workflows.</span></div>
+            <div class="tool">i18n<span class="tip">typesafe-i18n with build-time type generation, lazy locale chunks, BCP 47.</span></div>
+            <div class="tool">Playwright<span class="tip">E2E in CI; Vitest for unit tests.</span></div>
           </div>
         </div>
 
-        <!-- ─── IN PROGRESS ─── -->
-        <div data-panel="active" class="panel hidden">
-          <p class="font-vt text-base text-neon-pink/80 mb-5">▸ What I'm building right now. There's a lot, this is a sample.</p>
-
-          <div class="quest pink">
-            <div class="font-press text-xs text-neon-pink glow-pink mb-2">▶ TWO-WAY PREFERENCE SYNC</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">server-side state work ・ ongoing</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Building bidirectional sync between user preferences and downstream third-party destinations, with audit guarantees and shadow-mode regression testing so legacy outbound-only paths can be replaced without breaking live records. Same machinery applies any time you need state to converge across systems that were never designed to talk back.
-            </p>
-          </div>
-
-          <div class="quest">
-            <div class="font-press text-xs text-neon-green glow-green mb-2">▶ GENERIC PROCESSOR REGISTRATION</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">admin-UX work ・ ongoing</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              Going from a curated set of predefined integrations to a generic flow where any third-party can be registered with declarative capability and onboarding metadata. Reusable pattern for any catalog-style admin tool that wants to handle the long tail without hard-coding every entry.
-            </p>
-          </div>
-
-          <div class="quest cyan">
-            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">▶ THIS PORTFOLIO</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">SimianPrimus.github.io ・ retro arcade rebuild</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              The site you're standing in. Retro-arcade rebuild: Press Start 2P, neon palette, scanlines. Same look I keep coming back to.
-            </p>
-          </div>
-
-          <div class="quest amber">
-            <div class="font-press text-xs text-neon-amber glow-amber mb-2">▶ MOBILE SDK</div>
-            <div class="font-vt text-lg text-neon-cyan mb-1">native iOS + Android ・ planned</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              A native iOS and Android SDK so the same product primitives the embeddable web widget exposes are available to mobile apps without a webview detour. Generic problem of porting a stateful product across runtimes. Next on the build queue.
-            </p>
+        <div class="tool-group">
+          <h3>Backend</h3>
+          <div class="tools">
+            <div class="tool">Node 22<span class="tip">TypeScript, Express 4, Vitest with Testcontainers.</span></div>
+            <div class="tool">FastAPI<span class="tip">Small Python service for deterministic ID generation with SHA3-256.</span></div>
+            <div class="tool">Micronaut<span class="tip">Java 17→21 edge for the tag manager.</span></div>
+            <div class="tool">LangChain<span class="tip">LangChain + LangGraph. Supervisor agent coordinating generation, translation, and audit specialists with Postgres checkpointing for long runs.</span></div>
+            <div class="tool">Stripe<span class="tip">Checkout, billing portal, subscription state with retry and cancellation flows.</span></div>
+            <div class="tool">OAuth2<span class="tip">Production OAuth flows for seven SaaS platforms across project management, accounting, ad networks, and survey tooling.</span></div>
           </div>
         </div>
 
-        <!-- ─── TRAINING ─── -->
-        <div data-panel="training" class="panel hidden">
-          <p class="font-vt text-base text-neon-cyan/80 mb-5">▸ Currently grinding XP on...</p>
-
-          <div class="quest cyan">
-            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">▲ AWS CDK ・ INFRA-AS-CODE</div>
-            <div class="text-neon-cyan">
-              <div class="xp-bar" style="--xp: 65%"><span></span></div>
-            </div>
-            <div class="flex justify-between font-press text-[9px] text-neon-cyan/80 mb-3">
-              <span>EXP</span><span>65 / 100</span>
-            </div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/90 leading-snug">
-              I'm comfortable with the patterns and have shipped specific bits in production (DNS migrations, email-auth records, Redis cluster sizing, CloudFront work). Goal: get to where I can design a multi-region service end-to-end from a clean slate. Still levelling up on networking specifics and CloudFormation logical-ID gymnastics.
-            </p>
-          </div>
-
-          <div class="quest cyan opacity-70">
-            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">▲ ??? ・ NEXT SKILL</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/70 italic leading-snug">
-              ▸ slot reserved. tell me what to put here ◂
-            </p>
-          </div>
-
-          <div class="quest cyan opacity-70">
-            <div class="font-press text-xs text-neon-cyan glow-cyan mb-2">▲ ??? ・ NEXT SKILL</div>
-            <p class="font-vt text-base sm:text-lg text-neon-green/70 italic leading-snug">
-              ▸ slot reserved. tell me what to put here ◂
-            </p>
+        <div class="tool-group">
+          <h3>Data &amp; messaging</h3>
+          <div class="tools">
+            <div class="tool">Postgres 17<span class="tip">~1,900 Hasura migrations across the privacy schema.</span></div>
+            <div class="tool">Hasura<span class="tip">GraphQL with role-based metadata permissions across 4 trust tiers.</span></div>
+            <div class="tool">MongoDB 6<span class="tip">Replica set, keyfile auth.</span></div>
+            <div class="tool">ClickHouse<span class="tip">Cluster with S3 storage, column-oriented analytics ingest.</span></div>
+            <div class="tool">Redis 7<span class="tip">3-node Redlock cluster with circuit breaker. Did the cluster sizing analysis for production capacity.</span></div>
+            <div class="tool">RabbitMQ 4<span class="tip">Outbound dispatcher fan-out, async PII event publishing.</span></div>
           </div>
         </div>
 
+        <div class="tool-group">
+          <h3>Infra &amp; AI</h3>
+          <div class="tools">
+            <div class="tool">AWS CDK v2<span class="tip">Contributing to a production CDK platform across two regions. DNS migrations, email-auth wiring, CloudFront work.</span></div>
+            <div class="tool">CloudFront<span class="tip">L2 refactor and dynamic CORS for cross-origin widget embedding.</span></div>
+            <div class="tool">Redlock<span class="tip">Redis 3-node Redlock with circuit breaker. Did the cluster sizing analysis for production capacity.</span></div>
+            <div class="tool">Docker<span class="tip">Wrote a ~58KB local-env orchestrator covering the full service stack with health checks and secrets management.</span></div>
+            <div class="tool">Claude<span class="tip">Anthropic Sonnet 3.5 → 4.6 with extended thinking.</span></div>
+            <div class="tool">GPT-4<span class="tip">OpenAI dual-provider fallback alongside Claude.</span></div>
+          </div>
+        </div>
       </div>
-    </section>
+    </article>
 
-    <!-- ─── CONTACT / SAVE GAME ──────────────────────────────── -->
-    <section class="reveal mb-16">
-      <h2 class="section-heading text-base sm:text-xl mb-6">▶ SAVE GAME ・ CONTACT</h2>
+    <!-- ============================================================ -->
+    <!-- JOURNAL                                                       -->
+    <!-- ============================================================ -->
+    <article class="page" data-page="journal">
+      <div class="page-inner">
+        <header class="section-head">
+          <span class="folio">iv.</span>
+          <div>
+            <p class="kicker">Work in motion</p>
+            <h2>Journal</h2>
+          </div>
+        </header>
 
-      <div class="retro-frame p-6 sm:p-8">
-        <div class="font-press text-[10px] text-neon-green glow-green tracking-widest mb-4">
-          <span class="blink">●</span> OPEN TO CHAT ・ DROP A LINE
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="completed" role="tab">Grown <span class="count">11</span></button>
+          <button class="tab" data-tab="active" role="tab">Growing <span class="count">4</span></button>
+          <button class="tab" data-tab="training" role="tab">Seeded <span class="count">3</span></button>
         </div>
-        <div class="font-vt text-lg text-neon-amber glow-amber mb-4">▸ SELECT ONE</div>
-        <nav class="flex flex-col gap-1">
-          <a class="menu-link" href="https://www.linkedin.com/in/sarah-leigh-mcgregor/" target="_blank" rel="noopener noreferrer">
-            LINKEDIN
+
+        <!-- Grown -->
+        <div class="panel" data-panel="completed">
+          <p class="panel-intro">Built, shipped, in production.</p>
+
+          <article class="entry">
+            <h3>Consent Management Platform</h3>
+            <div class="subtitle">embeddable consent widget · 757 commits</div>
+            <p>Built a Consent Management Platform from scratch. Hardest part: most consents come from anonymous visitors on first contact, but they need to persist so that when the user later signs in, every preference is still there waiting for them to take control of. Ships in 12 locales as a single Shadow-DOM-isolated bundle that drops into any host site. Atomico Web Components, Apollo, XState. The same anonymous-to-authenticated state pattern applies any time you need pre-login product state to survive sign-up. November 2025 was a <span class="highlight">242-commit month</span>.</p>
+          </article>
+
+          <article class="entry">
+            <h3>Privacy Centre · dual-mode</h3>
+            <div class="subtitle">hosted SPA + embed bundle</div>
+            <p>This one is mostly mine. Built the user-facing privacy dashboard where data subjects review what's held about them, change their preferences, and submit rights requests (export, deletion, correction). Same codebase ships two ways: as a hosted SPA at a stable domain for direct customer link-outs, and as Web Components packaged into the embeddable bundle so customers can drop the same UI inside their own sites with shadow-DOM style isolation. The build-once-deploy-twice pattern is reusable any time a UI needs to live both as your own product surface and as a library someone else embeds inside theirs.</p>
+          </article>
+
+          <article class="entry">
+            <h3>Webhook hub</h3>
+            <div class="subtitle">API gateway / event hub · 971 commits</div>
+            <p>A 20+ integration webhook hub. Timing-safe HMAC, distributed Redlock idempotency, OAuth2 with seven SaaS platforms, Zod schemas at every boundary. The pattern is one consistent receive-validate-deduplicate path across vendors that all sign requests differently and each have their own idea of what a "retry" means. It applies any time you need a single trustworthy ingest layer that keeps the rest of the stack ignorant of vendor quirks.</p>
+          </article>
+
+          <article class="entry">
+            <h3>AI assistants · shared infrastructure</h3>
+            <div class="subtitle">multi-turn · multi-modal · tier-aware</div>
+            <p>Built and maintain a shared chat infrastructure that powers multiple distinct AI assistants across the product. The fun part isn't the chat itself, it's everything around it: multi-turn session state, per-user and per-plan rate limiting plus monthly quota enforcement, model upgrade migrations (Sonnet 3.5 → 4.6 with extended thinking, which means re-tuning prompts and behaviour around the new defaults), multimodal input (image URLs decoded to base64 for the model), and graceful degradation when upstream model APIs misbehave. Each assistant has its own system prompt, tool surface, and context-injection logic, but they all share the same conversation engine. Reusable any time a product wants to ship more than one conversational surface without ending up with N copies of the same plumbing.</p>
+          </article>
+
+          <article class="entry">
+            <h3>Multi-agent AI orchestration</h3>
+            <div class="subtitle">supervisor + specialists · LangGraph</div>
+            <p>A LangGraph multi-agent system that generates, translates, and audits regulated long-form documents. The supervisor coordinates three specialists: a generation agent that assembles jurisdiction-specific output from a structured knowledge base, a translation agent that handles each target locale while preserving placeholders and identifiers, and an audit agent that walks the output for hallucinated terminology, missing required sections, and regulatory drift. Postgres-checkpointed state so multi-hour runs survive restarts and can be inspected mid-flight. Supervisor + specialist agents + checkpointed state is the standard agentic shape. Reusable wherever long-form structured generation needs to be traceable: legal, healthcare, accountancy, regulated marketing copy.</p>
+          </article>
+
+          <article class="entry">
+            <h3>React admin SPA</h3>
+            <div class="subtitle">1,336 commits, the heaviest of the lot</div>
+            <p>Multi-step onboarding flows with partial saves, complex domain editors, regulatory dashboards, integration management for 15+ third-party platforms, embedded AI assistants, request-routing workflows, MFA and cross-domain auth sync. 100+ reusable components and 120+ custom hooks (averaging around 90 LOC). Most of these patterns transfer cleanly to any data-heavy admin SPA.</p>
+          </article>
+
+          <article class="entry">
+            <h3>Schema-as-code · Hasura</h3>
+            <div class="subtitle">~1,900 migrations on a regulated-data schema</div>
+            <p>Around 1,900 Hasura migrations across a complex regulated-data schema. For reference data the rule is strictly additive: add row, reassign refs, orphan, only delete after prod confirms. Live state never breaks on a single deploy that way. Role-based metadata permissions across four trust tiers. Same discipline applies any time regulated data has to migrate without breaking live records, which is most healthcare / fintech / privacy-adjacent systems.</p>
+          </article>
+
+          <article class="entry">
+            <h3>i18n at scale</h3>
+            <div class="subtitle">11 platform locales · 19 marketing locales</div>
+            <p>Did the typesafe-i18n migration across three production apps and a public marketing site. Wrote a US→UK content-transformation pipeline that walks an en_US tree and emits en_GB JSON with regulatory-term swaps, keeping placeholders and identifiers intact. AI document generation is locale-aware too, with sanctions-aware locale gating. Hit and fixed the usual i18n traps along the way: BCP 47 hyphen vs underscore, Next.js SSR hydration mismatch, lazy locale chunking. The setup transfers to any product that has to vary regulatory or legal content across markets.</p>
+          </article>
+
+          <article class="entry">
+            <h3>Developer experience tooling</h3>
+            <div class="subtitle">multi-repo orchestrators</div>
+            <p>Wrote the multi-repo orchestrators the team uses day to day. A <span class="highlight">27KB</span> branch-sync and bulk-ops tool spanning the polyrepo. A cross-repo regression harness combining several test suites into one verifiable green / red signal. A <span class="highlight">~58KB</span> local-env orchestrator covering container-registry auth, secrets management, health checks, and the full local service stack. Useful anywhere a small team is coordinating work across many repos without buying into a heavyweight monorepo.</p>
+          </article>
+
+          <article class="entry">
+            <h3>Tag manager edge</h3>
+            <div class="subtitle">Java edge service · 282 commits</div>
+            <p>A Java/Micronaut edge service for high-throughput tag delivery (Micronaut 2.5→4.8, Java 17→21 upgrade). Prometheus metrics, MaxMind GeoLite2 geo-location, async PII event publishing through a message queue, Google Consent Mode v2 BASIC↔ADVANCED transitions. Geo-aware, async-publish, low-latency: reusable shape for any consent or analytics gateway sitting in front of a downstream pipeline.</p>
+          </article>
+
+          <article class="entry">
+            <h3>AI-search optimisation</h3>
+            <div class="subtitle">marketing site · 76 commits</div>
+            <p>Dynamic Next.js sitemap, schema.org JSON-LD on 19 page templates, an <span class="highlight">llms.txt</span> for AI crawlers (ChatGPT Search, Perplexity, Claude), production CSP/HSTS headers, and a 308 redirect map so old URLs keep their SEO. Standard kit for any 2026-era marketing site that wants to be findable in both classic search and AI-driven discovery.</p>
+          </article>
+        </div>
+
+        <!-- Growing -->
+        <div class="panel hidden" data-panel="active">
+          <p class="panel-intro">What I'm building right now. There's a lot, this is a sample.</p>
+
+          <article class="entry">
+            <h3>Two-way preference sync</h3>
+            <div class="subtitle">server-side state work · ongoing</div>
+            <p>Building bidirectional sync between user preferences and downstream third-party destinations, with audit guarantees and shadow-mode regression testing so changes roll out incrementally without breaking live records. Same machinery applies any time you need state to converge across systems that were never designed to talk back.</p>
+          </article>
+
+          <article class="entry">
+            <h3>Declarative integration onboarding</h3>
+            <div class="subtitle">admin-UX work · ongoing</div>
+            <p>Building a declarative registration flow for arbitrary third-party integrations: capability metadata, dynamic onboarding form generation, OAuth or form-based callbacks, audit-log integration. The pattern is reusable for any admin tool with a catalog of providers to manage.</p>
+          </article>
+
+          <article class="entry">
+            <h3>This portfolio</h3>
+            <div class="subtitle">SimianPrimus.github.io · notebook rebuild</div>
+            <p>The book you're reading. A digital herbarium with turning pages, aged paper, ink illustrations, and serif typography in the spirit of a Victorian botanical journal.</p>
+          </article>
+
+          <article class="entry">
+            <h3>Mobile SDK</h3>
+            <div class="subtitle">native iOS + Android · planned</div>
+            <p>Native iOS and Android SDK work: porting stateful product primitives across runtimes so they're available without a webview detour. Generic problem of moving a UI library from web into native.</p>
+          </article>
+        </div>
+
+        <!-- Seeded -->
+        <div class="panel hidden" data-panel="training">
+          <p class="panel-intro">Currently growing.</p>
+
+          <article class="entry">
+            <h3>AWS CDK, infrastructure-as-code</h3>
+            <div class="subtitle">comfortable with the patterns, deepening</div>
+            <p>I've shipped specific bits in production (DNS migrations, email-auth records, Redis cluster sizing, CloudFront work). Goal: design a multi-region service end-to-end from a clean slate. Currently working on networking specifics and CloudFormation logical-ID handling.</p>
+          </article>
+
+          <article class="entry">
+            <h3>To be added</h3>
+            <div class="subtitle">slot reserved</div>
+            <p style="font-style: italic; opacity: 0.7;">Tell me what you're picking up next.</p>
+          </article>
+
+          <article class="entry">
+            <h3>To be added</h3>
+            <div class="subtitle">slot reserved</div>
+            <p style="font-style: italic; opacity: 0.7;">Tell me what you're picking up next.</p>
+          </article>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============================================================ -->
+    <!-- CONTACT                                                       -->
+    <!-- ============================================================ -->
+    <article class="page" data-page="contact">
+      <div class="page-inner">
+        <header class="section-head">
+          <span class="folio">v.</span>
+          <div>
+            <p class="kicker">The journey continues</p>
+            <h2>Get in touch</h2>
+          </div>
+          <div class="aside">open<br>to chat</div>
+        </header>
+
+        <div class="contact-status">
+          <span class="dot"></span>
+          Open to chat
+        </div>
+
+        <p class="contact-text">
+          Looking for a senior full-stack role on a problem with a lot of moving parts. Bonus points if privacy, ethics, or regulation is part of the job. Drop a line either way.
+        </p>
+
+        <div class="links">
+          <a class="link" href="https://www.linkedin.com/in/sarah-leigh-mcgregor/" target="_blank" rel="noopener noreferrer">
+            <span>LinkedIn</span><span class="arrow">→</span>
           </a>
-          <a class="menu-link" href="https://github.com/SimianPrimus" target="_blank" rel="noopener noreferrer">
-            GITHUB
+          <a class="link" href="https://github.com/SimianPrimus" target="_blank" rel="noopener noreferrer">
+            <span>GitHub</span><span class="arrow">→</span>
           </a>
-          <a class="menu-link" href="mailto:sarahmcgregor24@gmail.com">
-            EMAIL
+          <a class="link" href="mailto:sarahmcgregor24@gmail.com">
+            <span>Email</span><span class="arrow">→</span>
           </a>
-        </nav>
-      </div>
-    </section>
+        </div>
 
-    <!-- ─── FOOTER ───────────────────────────────────────────── -->
-    <footer class="text-center font-press text-[9px] sm:text-[10px] text-neon-green/70 glow-green mt-10 mb-4 tracking-widest">
-      ★ ・ THANKS FOR PLAYING ・ ★
-    </footer>
-    <div class="text-center font-vt text-neon-pink glow-pink text-base opacity-70">
-      Try the konami code: ▲ ▲ ▼ ▼ ◄ ► ◄ ► B A
-    </div>
+        <div class="ornament-rule colophon" aria-hidden="true">
+          <span class="rule"></span>
+          <span class="glyph">&#10086;</span>
+          <span class="rule"></span>
+        </div>
+        <p class="copy">Sarah McGregor &middot; MMXXVI</p>
+      </div>
+    </article>
 
   </main>
 
-  <script src="retro.js" defer></script>
+  <!-- Fixed bottom navigation -->
+  <nav class="book-nav" aria-label="Page navigation">
+    <button class="nav-btn nav-prev" aria-label="Previous page">&larr; back</button>
+    <span class="nav-marker">cover</span>
+    <button class="nav-btn nav-contents" aria-label="Contents">contents</button>
+    <button class="nav-btn nav-next" aria-label="Next page">forward &rarr;</button>
+  </nav>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
